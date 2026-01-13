@@ -1,0 +1,31 @@
+{
+    "name": "Revanth Kumar - Full Stack Developer & AI Engineer",
+    "short_name": "Revanth Kumar",
+    "description": "Portfolio of Revanth Kumar, Full Stack MERN Developer and AI Engineer",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#6366f1",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/profile pic.ico",
+            "sizes": "192x192",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/profile pic.ico",
+            "sizes": "512x512",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "portfolio",
+        "technology",
+        "development"
+    ],
+    "lang": "en-US",
+    "dir": "ltr"
+}

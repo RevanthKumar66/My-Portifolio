@@ -61,41 +61,60 @@ export default function ProjectHighlights() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-300"
+                            whileHover={{ y: -8, scale: 1.02 }}
+                            className="relative p-[1.5px] rounded-lg overflow-hidden group"
                         >
-                            <div className="relative h-48 overflow-hidden">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                />
-                            </div>
+                            {/* Animated Border Gradient */}
+                            <motion.div
+                                animate={{ rotate: [0, 360] }}
+                                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                style={{
+                                    background: `conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(var(--primary-rgb, 59, 130, 246), 0.6) 360deg)`,
+                                }}
+                                className="absolute inset-[-200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            />
 
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+                            {/* Card Background */}
+                            <div className="relative bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 group-hover:shadow-2xl group-hover:shadow-primary/10 transition-all duration-300 h-full z-10">
+                                {/* Hover Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.map((tech, idx) => (
-                                        <span key={idx} className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">
-                                            {tech}
-                                        </span>
-                                    ))}
+                                <div className="relative h-48 overflow-hidden rounded">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover group-hover:scale-110 group-hover:brightness-105 transition-all duration-500"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    />
+                                    {/* Image Overlay on Hover */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </div>
 
-                                <div className="flex gap-2">
-                                    <Link href={project.link} className="flex-1">
-                                        <Button size="sm" className="w-full rounded-full">
-                                            <FiExternalLink className="w-4 h-4 mr-1" /> View
-                                        </Button>
-                                    </Link>
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                        <Button size="sm" variant="outline" className="rounded-full">
-                                            <FiGithub className="w-4 h-4" />
-                                        </Button>
-                                    </a>
+                                <div className="p-6 relative z-20">
+                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">{project.description}</p>
+
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.technologies.map((tech, idx) => (
+                                            <span key={idx} className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex gap-2">
+                                        <Link href={project.link} className="flex-1">
+                                            <Button size="sm" className="w-full rounded-full hover:scale-105 transition-transform">
+                                                <FiExternalLink className="w-4 h-4 mr-1" /> View
+                                            </Button>
+                                        </Link>
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                            <Button size="sm" variant="outline" className="rounded-full hover:scale-110 transition-transform">
+                                                <FiGithub className="w-4 h-4" />
+                                            </Button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

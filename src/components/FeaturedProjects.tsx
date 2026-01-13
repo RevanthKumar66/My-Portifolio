@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import 'swiper/css';
-import { FiGithub, FiExternalLink, FiChevronLeft, FiChevronRight, FiArrowRight } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiChevronLeft, FiChevronRight, FiArrowRight, FiCode } from "react-icons/fi";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -83,14 +83,13 @@ export default function FeaturedProjects() {
                         </button>
                     </div>
 
-                    <div className="overflow-hidden px-4 md:px-4 -mx-4 md:mx-0">
+                    <div className="overflow-hidden px-4 md:px-12 -mx-4 md:mx-0">
                         <Swiper
                             onSwiper={(swiper) => (swiperRef.current = swiper)}
                             modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={16}
+                            spaceBetween={24}
                             slidesPerView={'auto'}
-                            centeredSlides={true}
-                            centeredSlidesBounds={true}
+                            centeredSlides={false}
                             loop={false}
                             pagination={{
                                 clickable: true,
@@ -104,58 +103,94 @@ export default function FeaturedProjects() {
                             breakpoints={{
                                 640: {
                                     slidesPerView: 2,
-                                    spaceBetween: 24,
-                                    centeredSlides: false
+                                    spaceBetween: 20
                                 },
                                 1024: {
                                     slidesPerView: 3,
-                                    spaceBetween: 24,
-                                    centeredSlides: false
+                                    spaceBetween: 24
+                                },
+                                1280: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 24
                                 }
                             }}
                             className="w-full pb-12"
                         >
                             {featuredProjects.map((project, index) => (
-                                <SwiperSlide key={index} className="!w-[280px] md:!w-full h-full">
+                                <SwiperSlide key={index} className="h-full">
                                     <motion.div
-                                        whileHover={{ y: -5 }}
-                                        className="h-[380px] md:h-[400px] w-full relative rounded-2xl md:rounded-3xl overflow-hidden group shadow-lg border border-slate-100 dark:border-slate-900"
+                                        whileHover={{ y: -8, scale: 1.02 }}
+                                        className="h-[380px] w-full relative p-[1.5px] rounded-lg overflow-hidden group"
                                     >
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        {/* Animated Border Gradient */}
+                                        <motion.div
+                                            animate={{ rotate: [0, 360] }}
+                                            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                            style={{
+                                                background: `conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(var(--primary-rgb, 59, 130, 246), 0.6) 360deg)`,
+                                            }}
+                                            className="absolute inset-[-200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                         />
 
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5 md:p-6">
-                                            <div className="space-y-2 mb-6">
-                                                <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
-                                                    {project.title}
-                                                </h3>
-                                                <p className="text-slate-300 text-xs leading-relaxed line-clamp-2">
-                                                    {project.description}
-                                                </p>
-                                            </div>
+                                        {/* Card Background with subtle border */}
+                                        <div className="relative h-full w-full rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-3 shadow-sm group-hover:shadow-2xl group-hover:shadow-primary/10 transition-all duration-500 z-10">
+                                            {/* Hover Gradient Overlay */}
+                                            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                                            <div className="grid grid-cols-2 gap-3">
-                                                <Link href={project.isLive ? project.link : "/projects"} target={project.isLive ? "_blank" : "_self"}>
-                                                    <Button
-                                                        size="sm"
-                                                        className="w-full rounded-xl bg-white text-slate-900 hover:bg-primary hover:text-white font-bold py-2 text-xs transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-black/20"
-                                                    >
-                                                        {project.isLive ? "Live Demo" : "Details"} <FiExternalLink size={12} />
-                                                    </Button>
-                                                </Link>
-                                                <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                                    <Button
-                                                        variant="outline"
-                                                        size="sm"
-                                                        className="w-full rounded-xl bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-primary hover:border-primary font-bold py-2 text-xs transition-all flex items-center justify-center gap-1.5"
-                                                    >
-                                                        GitHub <FiGithub size={12} />
-                                                    </Button>
-                                                </a>
+                                            {/* Card Structure matching the reference: Padded inner frame */}
+                                            <div className="flex flex-col h-full relative z-10">
+                                                {/* Image Container - Inner rounded box with 1:2 ratio (4px) */}
+                                                <div className="relative h-[200px] w-full rounded overflow-hidden bg-slate-100 dark:bg-slate-800 group-hover:ring-2 group-hover:ring-primary/20 transition-all duration-500">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-105"
+                                                    />
+                                                    {/* Image Overlay on Hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                </div>
+
+                                                {/* Content */}
+                                                <div className="flex flex-col flex-1 pt-4 px-2">
+                                                    <div className="flex items-center justify-between mb-1">
+                                                        <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">
+                                                            {project.title}
+                                                        </h3>
+                                                        {project.isLive && (
+                                                            <span className="flex h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] group-hover:shadow-[0_0_12px_rgba(34,197,94,0.8)] transition-shadow" title="Live Project" />
+                                                        )}
+                                                    </div>
+
+                                                    <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2 mb-auto group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
+                                                        {project.description}
+                                                    </p>
+
+                                                    {/* Bottom Actions - Pill shaped like "Follow +" */}
+                                                    <div className="mt-4 flex items-center justify-between gap-3">
+                                                        <div className="flex -space-x-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                                                            <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-400 z-10 group-hover:scale-110 transition-transform">
+                                                                <FiCode size={12} />
+                                                            </div>
+                                                            <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-500 group-hover:scale-110 transition-transform">
+                                                                <FiExternalLink size={12} />
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="flex gap-2">
+                                                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                                <button className="h-9 w-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition-all">
+                                                                    <FiGithub className="w-4 h-4" />
+                                                                </button>
+                                                            </a>
+                                                            <Link href={project.isLive ? project.link : "/projects"} target={project.isLive ? "_blank" : "_self"}>
+                                                                <button className="h-9 px-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold hover:opacity-90 hover:scale-105 transition-all shadow-md flex items-center gap-1 group-hover:shadow-lg">
+                                                                    Visit <FiArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                                                                </button>
+                                                            </Link>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>

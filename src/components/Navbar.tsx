@@ -64,14 +64,17 @@ export default function Navbar() {
                         </div>
                     </nav>
 
-                    {/* Mobile Menu Button - 44px min touch area intentionally handled by p-2 size */}
-                    <button
-                        className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors focus:outline-none"
-                        onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                    </button>
+                    {/* Mobile Menu Button & Theme Toggle */}
+                    <div className="md:hidden flex items-center gap-2">
+                        <ModeToggle />
+                        <button
+                            className="p-2 text-muted-foreground hover:text-primary transition-colors focus:outline-none"
+                            onClick={() => setIsOpen(!isOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                        </button>
+                    </div>
                 </div>
             </motion.div>
 
@@ -99,13 +102,7 @@ export default function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
-                            <div className="flex items-center justify-between h-[40px] px-4 rounded-xl text-[14px] font-medium text-muted-foreground hover:bg-slate-100 dark:hover:bg-slate-800 mt-1">
-                                <span>Theme</span>
-                                <div className="flex items-center justify-center w-[40px] h-[40px]">
-                                    <ModeToggle />
-                                </div>
                             </div>
-                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

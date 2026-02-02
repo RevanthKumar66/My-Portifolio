@@ -49,9 +49,10 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="flex flex-col items-center md:items-start space-y-4 md:space-y-3 w-full"
                     >
-                        <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-[10px] md:text-xs font-medium text-primary mb-2 md:mb-1">
-                            <span className="flex h-1.5 w-1.5 rounded-full bg-primary mr-1.5"></span>
-                            Available for Freelance & Full-time
+                        <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2 py-0.5 text-[8px] md:text-xs font-medium text-primary mb-4 md:mb-1 whitespace-nowrap">
+                            <span className="flex h-1 w-1 rounded-full bg-primary mr-1 md:mr-1.5"></span>
+                            <span className="hidden sm:inline">Available for Freelance & Full-time</span>
+                            <span className="sm:hidden">Open to Work</span>
                         </div>
 
                         <h1 className="text-[22px] md:text-3xl text-foreground font-bold leading-tight">

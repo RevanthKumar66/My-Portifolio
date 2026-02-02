@@ -35,7 +35,7 @@ const techStack = [
 
 export default function TechStackSnapshot() {
     return (
-        <section className="relative py-10 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
+        <section className="hidden md:block relative py-10 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
             {/* Decorative Background Gradients */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-cyan-500/5 to-transparent rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl" />

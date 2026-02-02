@@ -69,7 +69,7 @@ export default function ContactHero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="relative flex items-center justify-center lg:justify-end"
+                        className="relative flex items-center justify-center lg:justify-end hidden md:flex"
                     >
                         <div className="relative w-full aspect-square max-w-[350px]">
                             <Image

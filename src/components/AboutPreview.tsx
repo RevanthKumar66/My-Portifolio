@@ -98,20 +98,20 @@ export default function AboutPreview() {
                                     <FiAward size={18} className="md:w-5 md:h-5" />
                                     <span className="font-bold text-xs md:text-sm">Focus</span>
                                 </div>
-                                <p className="text-sm font-medium">Full Stack & AI</p>
-                                <p className="text-xs text-muted-foreground">MERN + ML/DS</p>
+                                <p className="text-xs md:text-sm font-medium">Full Stack & AI</p>
+                                <p className="text-[11px] md:text-xs text-muted-foreground">MERN + ML/DS</p>
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-4 pt-2">
-                            <Link href="/about">
-                                <Button className="rounded-full px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30">
-                                    Read Full Story <FiArrowRight className="ml-2" />
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-4 pt-2">
+                            <Link href="/about" className="w-full sm:w-auto">
+                                <Button className="w-full sm:w-auto rounded-lg md:rounded-full px-5 md:px-8 text-[13px] md:text-base shadow-lg shadow-primary/20 hover:shadow-primary/30">
+                                    Read Full Story <FiArrowRight className="ml-2" size={16} />
                                 </Button>
                             </Link>
-                            <a href="/RevanthSDE.pdf" download>
-                                <Button variant="outline" className="rounded-full px-8">
-                                    Download Resume <FiDownload className="ml-2" />
+                            <a href="/RevanthSDE.pdf" download className="w-full sm:w-auto">
+                                <Button variant="outline" className="w-full sm:w-auto rounded-lg md:rounded-full px-5 md:px-8 text-[13px] md:text-base">
+                                    Download Resume <FiDownload className="ml-2" size={16} />
                                 </Button>
                             </a>
                         </div>

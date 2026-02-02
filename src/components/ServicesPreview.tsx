@@ -61,11 +61,11 @@ const cardVariants = {
 
 export default function ServicesPreview() {
     return (
-        <section className="relative py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
+        <section className="relative py-12 md:py-16 lg:py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
             {/* Background Accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+            <div className="container px-4 md:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
                 <SectionHeader
                     title="Expert Solutions"
                     subtitle="Technical services designed to help your business thrive."
@@ -76,7 +76,7 @@ export default function ServicesPreview() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12 lg:mt-16"
                 >
                     {services.map((service, index) => (
                         <motion.div
@@ -154,5 +154,3 @@ export default function ServicesPreview() {
         </section>
     );
 }
-
-

@@ -84,9 +84,9 @@ export default function BlogsPreview() {
                     ))}
                 </div>
 
-                <div className="mt-8 md:hidden text-center">
+                <div className="mt-6 md:hidden text-center">
                     <Link href="/blogs">
-                        <Button variant="outline" className="w-full rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                        <Button variant="outline" className="w-full rounded-lg hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-sm">
                             Read All Articles
                         </Button>
                     </Link>

@@ -33,16 +33,16 @@ export default function ContactFormSection() {
     };
 
     return (
-        <section className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <section className="py-12 md:py-16 lg:py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+            <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-7xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
                     {/* Left Side - Form */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="glass-card p-8 md:p-10 shadow-2xl relative flex flex-col justify-center"
+                        className="glass-card p-5 md:p-8 lg:p-10 shadow-2xl relative flex flex-col justify-center"
                     >
                         <AnimatePresence mode="wait">
                             {!isSubmitted ? (
@@ -52,13 +52,13 @@ export default function ContactFormSection() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                 >
-                                    <h2 className="text-2xl font-bold mb-2">Send a <span className="text-primary">Message</span></h2>
-                                    <p className="text-sm text-muted-foreground mb-8">I'll get back to you within 24 hours.</p>
+                                    <h2 className="text-xl md:text-2xl font-bold mb-1.5 md:mb-2">Send a <span className="text-primary">Message</span></h2>
+                                    <p className="text-xs md:text-sm text-muted-foreground mb-5 md:mb-8">I'll get back to you within 24 hours.</p>
 
-                                    <form onSubmit={handleSubmit} className="space-y-4">
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-4">
                                             <div className="space-y-1.5">
-                                                <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Full Name</label>
+                                                <label htmlFor="name" className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-500">Full Name</label>
                                                 <input
                                                     id="name"
                                                     type="text"
@@ -66,12 +66,12 @@ export default function ContactFormSection() {
                                                     required
                                                     value={formData.name}
                                                     onChange={handleChange}
-                                                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                    className="w-full px-3 md:px-4 py-2 md:py-2.5 rounded-lg md:rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs md:text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     placeholder="John Doe"
                                                 />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Email Address</label>
+                                                <label htmlFor="email" className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-500">Email Address</label>
                                                 <input
                                                     id="email"
                                                     type="email"
@@ -79,21 +79,21 @@ export default function ContactFormSection() {
                                                     required
                                                     value={formData.email}
                                                     onChange={handleChange}
-                                                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                    className="w-full px-3 md:px-4 py-2 md:py-2.5 rounded-lg md:rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs md:text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     placeholder="john@example.com"
                                                 />
                                             </div>
                                         </div>
 
                                         <div className="space-y-1.5">
-                                            <label htmlFor="subject" className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Subject</label>
+                                            <label htmlFor="subject" className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-500">Subject</label>
                                             <select
                                                 id="subject"
                                                 name="subject"
                                                 value={formData.subject}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none transition-all"
+                                                className="w-full px-3 md:px-4 py-2 md:py-2.5 rounded-lg md:rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs md:text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none transition-all"
                                             >
                                                 <option value="">Select purpose</option>
                                                 <option value="Internship">Internship</option>

@@ -61,11 +61,11 @@ const cardVariants = {
 
 export default function ServicesPreview() {
     return (
-        <section className="relative py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
+        <section className="relative py-12 md:py-16 lg:py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
             {/* Background Accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+            <div className="container px-4 md:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
                 <SectionHeader
                     title="Expert Solutions"
                     subtitle="Technical services designed to help your business thrive."
@@ -76,7 +76,7 @@ export default function ServicesPreview() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12 lg:mt-16"
                 >
                     {services.map((service, index) => (
                         <motion.div
@@ -103,7 +103,7 @@ export default function ServicesPreview() {
                                 {/* Card Structure */}
                                 <div className="flex flex-col h-full relative z-10">
                                     {/* Image Container - Full width, minimal side padding */}
-                                    <div className="relative h-[220px] w-full rounded overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 p-6 group-hover:ring-2 group-hover:ring-primary/20 transition-all duration-500">
+                                    <div className="relative h-[160px] md:h-[220px] w-full rounded overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 p-3 md:p-6 group-hover:ring-2 group-hover:ring-primary/20 transition-all duration-500">
                                         <div className="relative w-full h-full">
                                             <Image
                                                 src={service.image}
@@ -116,18 +116,18 @@ export default function ServicesPreview() {
                                     </div>
 
                                     {/* Compact Content Section */}
-                                    <div className="flex flex-col pt-3 px-2">
-                                        <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300">
+                                    <div className="flex flex-col pt-2.5 md:pt-3 px-2">
+                                        <h3 className="text-xs md:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                                             {service.title}
                                         </h3>
 
-                                        <p className="text-xs text-slate-600 dark:text-slate-400 leading-snug mb-2 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
+                                        <p className="text-[11px] md:text-xs text-slate-600 dark:text-slate-400 leading-snug mb-2 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors line-clamp-2">
                                             {service.description}
                                         </p>
 
                                         {/* Compact CTA - Always visible but highlighted on hover */}
-                                        <Link href="/services" className="inline-flex items-center text-xs font-semibold text-primary opacity-70 group-hover:opacity-100 hover:gap-2 transition-all">
-                                            Learn More <FiArrowRight className="ml-1 w-3 h-3" />
+                                        <Link href="/services" className="inline-flex items-center text-[10px] md:text-xs font-semibold text-primary opacity-70 group-hover:opacity-100 hover:gap-2 transition-all">
+                                            Learn More <FiArrowRight className="ml-1 w-2.5 md:w-3 h-2.5 md:h-3" />
                                         </Link>
                                     </div>
                                 </div>
@@ -142,11 +142,11 @@ export default function ServicesPreview() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="mt-12 text-center"
+                    className="mt-8 md:mt-10 lg:mt-12 text-center"
                 >
                     <Link href="/services">
-                        <Button className="rounded-full px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30">
-                            View All Services <FiArrowRight className="ml-2" />
+                        <Button className="rounded-lg md:rounded-full px-5 md:px-8 text-[13px] md:text-base shadow-lg shadow-primary/20 hover:shadow-primary/30">
+                            View All Services <FiArrowRight className="ml-2" size={16} />
                         </Button>
                     </Link>
                 </motion.div>
@@ -154,5 +154,3 @@ export default function ServicesPreview() {
         </section>
     );
 }
-
-

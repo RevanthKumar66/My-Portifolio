@@ -1,276 +1,58 @@
-/* Professional Mobile Responsive Redesign (≤ 768px) */
+/* Mobile Responsive CSS - Complementary to Tailwind Classes */
 
-@media (max-width: 768px) {
-
-    /* --- Global Layout Configuration --- */
-    :root {
-        --viewport-padding: 1.25rem;
-    }
-
+/* Ensure no horizontal overflow on mobile */
+@media (max-width: 640px) {
     html,
     body {
         overflow-x: hidden;
         width: 100%;
-        position: relative;
     }
 
+    /* Prevent images from overflowing */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ensure containers don't overflow */
     .container {
-        padding-left: var(--viewport-padding) !important;
-        padding-right: var(--viewport-padding) !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    section {
-        padding-top: 3.5rem !important;
-        padding-bottom: 3.5rem !important;
-    }
-
-    /* --- Typography Scaling (Proportional) --- */
-    h1 {
-        font-size: 1.5rem !important;
-        /* Scaled down logo */
-        line-height: 1.2 !important;
-        letter-spacing: -0.01em !important;
-    }
-
-    h2 {
-        font-size: 1.75rem !important;
-        /* Adjusted heading */
-        line-height: 1.2 !important;
-        margin-bottom: 0.75rem !important;
-    }
-
-    h3 {
-        font-size: 1.35rem !important;
-        line-height: 1.3 !important;
-    }
-
-    p,
-    span,
-    li {
-        font-size: 0.9375rem !important;
-        /* 15px for better readability */
-        line-height: 1.6 !important;
-    }
-
-    .text-xs {
-        font-size: 0.75rem !important;
-    }
-
-    .text-sm {
-        font-size: 0.8125rem !important;
-    }
-
-    .text-lg {
-        font-size: 1.125rem !important;
-    }
-
-    .text-xl {
-        font-size: 1.25rem !important;
-    }
-
-    /* --- Navbar Optimization --- */
-    header {
-        top: 0.75rem !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    header>div {
-        height: 3.25rem !important;
-    }
-
-    /* Fix for the overlapping logo in the screenshot */
-    header .font-logo {
-        font-size: 0.8rem !important;
-        /* Slightly smaller for tight headers */
-        letter-spacing: 0.05em !important;
-    }
-
-    header div.flex {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    /* --- Hero Section Refinement --- */
-    .hero-section {
-        padding-top: 6.5rem !important;
-        /* More space for fixed header */
-        min-height: auto !important;
-    }
-
-    /* Adjust the main Revanth Kumar logo in Hero */
-    .hero-section h1 .font-logo {
-        font-size: 1.8rem !important;
-        gap: 0.02em !important;
-    }
-
-    /* Target the profile image container specifically */
-    .hero-section img {
-        transform: scale(0.95);
-    }
-
-    /* Center hero content on mobile if needed, but keeping user structure */
-    .hero-section .grid {
-        gap: 2.5rem !important;
-    }
-
-    /* Resize profile circles */
-    [class*="w-[220px]"],
-    [class*="h-[220px]"] {
-        width: 180px !important;
-        height: 180px !important;
-    }
-
-    [class*="w-[240px]"],
-    [class*="h-[240px]"] {
-        width: 200px !important;
-        height: 200px !important;
-    }
-
-    [class*="w-[290px]"],
-    [class*="h-[290px]"] {
-        width: 240px !important;
-        height: 240px !important;
-    }
-
-    /* Right column height adjustment */
-    .hero-section .relative.h-\[400px\] {
-        height: 280px !important;
-    }
-
-    /* --- UI Components & Interactive Elements --- */
-    button,
-    .button,
-    [role="button"] {
-        padding: 0.625rem 1.25rem !important;
-        border-radius: 9999px !important;
-        font-weight: 600 !important;
-        font-size: 0.875rem !important;
-        letter-spacing: 0.01em !important;
-        height: auto !important;
-        min-height: 2.75rem !important;
-        /* Tappable size */
-    }
-
-    .flex-wrap {
-        gap: 0.75rem !important;
-    }
-
-    /* Cards Scaling */
-    .card,
-    [class*="rounded-xl"],
-    [class*="rounded-2xl"],
-    .bg-white,
-    .dark\:bg-slate-900 {
-        padding: 1.25rem !important;
-    }
-
-    /* Projects Slider Scaling */
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none !important;
-        /* Hide arrows on mobile for swipe focus */
-    }
-
-    /* --- Spacing Utilities Overrides --- */
-    .space-y-8> :not([hidden])~ :not([hidden]) {
-        margin-top: 1.5rem !important;
-    }
-
-    .space-y-6> :not([hidden])~ :not([hidden]) {
-        margin-top: 1.25rem !important;
-    }
-
-    .space-y-4> :not([hidden])~ :not([hidden]) {
-        margin-top: 1rem !important;
-    }
-
-    .gap-8 {
-        gap: 1.5rem !important;
-    }
-
-    .gap-12 {
-        gap: 2rem !important;
-    }
-
-    .mb-12 {
-        margin-bottom: 2rem !important;
-    }
-
-    .mb-16 {
-        margin-bottom: 2.5rem !important;
-    }
-
-    .mb-20 {
-        margin-bottom: 3rem !important;
-    }
-
-    /* --- Component-Specific Mobile Overrides --- */
-
-    /* Experience Snapshot Timeline Fix */
-    [class*="ml-20"] {
-        margin-left: 3.5rem !important;
-    }
-
-    [class*="md:w-[calc(50%-2rem)]"] {
-        width: calc(100% - 3.5rem) !important;
-    }
-
-    /* Featured Projects Card Scaling */
-    .h-\[400px\] {
-        height: 320px !important;
-    }
-
-    /* About Preview Stats Card Optimization */
-    .-bottom-6.-right-6 {
-        bottom: -1rem !important;
-        right: 0 !important;
-        max-width: 160px !important;
-        padding: 0.75rem !important;
-    }
-
-    /* Section Header Tightening */
-    [class*="mb-12"],
-    .mb-12 {
-        margin-bottom: 1.5rem !important;
-    }
-
-    /* Services Preview Padding Fix */
-    .p-8 {
-        padding: 1.25rem !important;
-    }
-
-    /* Swiper Pagination adjustments */
-    .swiper-pagination {
-        bottom: 0 !important;
-    }
-
-    /* Footer Polishing */
-    footer {
-        padding-top: 3rem !important;
-        padding-bottom: 2rem !important;
-        text-align: center;
-    }
-
-    footer .grid {
-        gap: 2.5rem !important;
-    }
-
-    /* Remove floating animations for performance on low-end mobile if they feel heavy */
-    .animate-bounce,
-    .animate-pulse {
-        animation-duration: 3s !important;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
-/* Touch-optimized interactions */
-@media (hover: none) {
+/* Optimize touch interactions */
+@media (hover: none) and (pointer: coarse) {
+    button,
+    a,
+    [role="button"] {
+        min-height: 48px;
+        min-width: 48px;
+    }
 
     button:active,
-    a:active {
-        background-color: rgba(0, 0, 0, 0.05);
-        transform: scale(0.98);
+    a:active,
+    [role="button"]:active {
+        opacity: 0.8;
     }
+}
+
+/* Improve readability on mobile */
+@media (max-width: 768px) {
+    body {
+        line-height: 1.6;
+    }
+
+    /* Ensure long text doesn't overflow */
+    p,
+    li,
+    span {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Optional: Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }

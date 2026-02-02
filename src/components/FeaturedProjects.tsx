@@ -50,15 +50,15 @@ export default function FeaturedProjects() {
     const swiperRef = useRef<any>(null);
 
     return (
-        <section className="relative py-20 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/2 rounded-full blur-[100px] pointer-events-none" />
+        <section className="relative py-12 md:py-16 lg:py-20 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/2 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container px-4 md:px-12 max-w-7xl mx-auto relative z-10">
+            <div className="container px-4 md:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
                 <SectionHeader
                     title="Featured Projects"
                     subtitle="A showcase of technical innovation and design excellence."
                     align="center"
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                 />
 
                 <div className="relative group/nav">
@@ -101,7 +101,15 @@ export default function FeaturedProjects() {
                                 disableOnInteraction: false,
                             }}
                             breakpoints={{
+                                0: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 16
+                                },
                                 640: {
+                                    slidesPerView: 1.5,
+                                    spaceBetween: 16
+                                },
+                                768: {
                                     slidesPerView: 2,
                                     spaceBetween: 20
                                 },
@@ -120,7 +128,7 @@ export default function FeaturedProjects() {
                                 <SwiperSlide key={index} className="h-full">
                                     <motion.div
                                         whileHover={{ y: -8, scale: 1.02 }}
-                                        className="h-[380px] w-full relative p-[1.5px] rounded-lg overflow-hidden group"
+                                        className="h-[320px] md:h-[380px] w-full relative p-[1.5px] rounded-lg overflow-hidden group"
                                     >
                                         {/* Animated Border Gradient */}
                                         <motion.div
@@ -140,7 +148,7 @@ export default function FeaturedProjects() {
                                             {/* Card Structure matching the reference: Padded inner frame */}
                                             <div className="flex flex-col h-full relative z-10">
                                                 {/* Image Container - Inner rounded box with 1:2 ratio (4px) */}
-                                                <div className="relative h-[200px] w-full rounded overflow-hidden bg-slate-100 dark:bg-slate-800 group-hover:ring-2 group-hover:ring-primary/20 transition-all duration-500">
+                                                <div className="relative h-[160px] md:h-[200px] w-full rounded overflow-hidden bg-slate-100 dark:bg-slate-800 group-hover:ring-2 group-hover:ring-primary/20 transition-all duration-500">
                                                     <Image
                                                         src={project.image}
                                                         alt={project.title}
@@ -152,9 +160,9 @@ export default function FeaturedProjects() {
                                                 </div>
 
                                                 {/* Content */}
-                                                <div className="flex flex-col flex-1 pt-4 px-2">
+                                                <div className="flex flex-col flex-1 pt-3 md:pt-4 px-2">
                                                     <div className="flex items-center justify-between mb-1">
-                                                        <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">
+                                                        <h3 className="text-sm md:text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300 line-clamp-1">
                                                             {project.title}
                                                         </h3>
                                                         {project.isLive && (
@@ -162,30 +170,30 @@ export default function FeaturedProjects() {
                                                         )}
                                                     </div>
 
-                                                    <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2 mb-auto group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
+                                                    <p className="text-slate-500 dark:text-slate-400 text-[11px] md:text-xs leading-relaxed line-clamp-2 mb-auto group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                                                         {project.description}
                                                     </p>
 
                                                     {/* Bottom Actions - Pill shaped like "Follow +" */}
-                                                    <div className="mt-4 flex items-center justify-between gap-3">
-                                                        <div className="flex -space-x-2 opacity-70 group-hover:opacity-100 transition-opacity">
-                                                            <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-400 z-10 group-hover:scale-110 transition-transform">
-                                                                <FiCode size={12} />
+                                                    <div className="mt-2 md:mt-4 flex items-center justify-between gap-2 md:gap-3">
+                                                        <div className="hidden sm:flex -space-x-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                                                            <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-slate-50 dark:bg-slate-800 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-400 z-10 group-hover:scale-110 transition-transform">
+                                                                <FiCode size={10} className="md:w-3 md:h-3" />
                                                             </div>
-                                                            <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-500 group-hover:scale-110 transition-transform">
-                                                                <FiExternalLink size={12} />
+                                                            <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-slate-100 dark:bg-slate-700 border-2 border-white dark:border-slate-900 flex items-center justify-center text-slate-500 group-hover:scale-110 transition-transform">
+                                                                <FiExternalLink size={10} className="md:w-3 md:h-3" />
                                                             </div>
                                                         </div>
 
-                                                        <div className="flex gap-2">
+                                                        <div className="flex gap-1.5 md:gap-2">
                                                             <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                                                <button className="h-9 w-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition-all">
-                                                                    <FiGithub className="w-4 h-4" />
+                                                                <button className="h-7 md:h-9 w-7 md:w-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition-all">
+                                                                    <FiGithub className="w-3 md:w-4 h-3 md:h-4" />
                                                                 </button>
                                                             </a>
                                                             <Link href={project.isLive ? project.link : "/projects"} target={project.isLive ? "_blank" : "_self"}>
-                                                                <button className="h-9 px-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold hover:opacity-90 hover:scale-105 transition-all shadow-md flex items-center gap-1 group-hover:shadow-lg">
-                                                                    Visit <FiArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                                                                <button className="h-7 md:h-9 px-3 md:px-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] md:text-xs font-bold hover:opacity-90 hover:scale-105 transition-all shadow-md flex items-center gap-1 group-hover:shadow-lg">
+                                                                    Visit <FiArrowRight className="w-2.5 md:w-3 h-2.5 md:h-3 group-hover:translate-x-0.5 transition-transform" />
                                                                 </button>
                                                             </Link>
                                                         </div>
@@ -203,9 +211,9 @@ export default function FeaturedProjects() {
                     </div>
                 </div>
 
-                <div className="mt-8 text-center">
+                <div className="mt-6 md:mt-8 text-center">
                     <Link href="/projects">
-                        <Button variant="link" className="text-primary font-bold text-sm group hover:gap-3 transition-all">
+                        <Button variant="link" className="text-primary font-bold text-xs md:text-sm group hover:gap-3 transition-all">
                             View More Projects <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                     </Link>

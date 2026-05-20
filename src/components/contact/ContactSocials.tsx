@@ -25,7 +25,7 @@ const socials = [
     {
         icon: FiMail,
         label: "Email Me",
-        href: "mailto:revanth.kumar4466@gmail.com",
+        href: "mailto:bandi@revanthkumar.co.in",
         color: "hover:bg-primary hover:text-white"
     }
 ];

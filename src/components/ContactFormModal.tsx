@@ -30,27 +30,43 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitError(null);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
 
-        console.log("Form submitted:", formData);
+            const data = await response.json();
 
-        // Reset form
-        setFormData({
-            fullName: "",
-            email: "",
-            mobile: "",
-            service: "",
-            message: ""
-        });
-
-        setIsSubmitting(false);
-        onClose();
+            if (response.ok && data.success) {
+                // Reset form
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    mobile: "",
+                    service: "",
+                    message: ""
+                });
+                onClose();
+            } else {
+                setSubmitError(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (err) {
+            console.error("Error submitting project request:", err);
+            setSubmitError("Failed to send message. Please check your network connection.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -188,6 +204,12 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                                         placeholder="Tell me about your project..."
                                     />
                                 </div>
+
+                                {submitError && (
+                                    <div className="text-xs font-semibold text-red-500 bg-red-500/10 border border-red-500/20 px-3 py-2 rounded-lg mb-4">
+                                        {submitError}
+                                    </div>
+                                )}
 
                                 {/* Buttons Row */}
                                 <div className="flex items-center gap-3">

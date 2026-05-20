@@ -14,6 +14,7 @@ export default function ContactFormSection() {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,14 +23,33 @@ export default function ContactFormSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setSubmitError(null);
 
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                setIsSubmitted(true);
+                setFormData({ name: "", email: "", subject: "", message: "" });
+                // Reset success message after 5 seconds
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                setSubmitError(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (err) {
+            console.error("Error submitting contact form:", err);
+            setSubmitError("Failed to send message. Please check your network connection.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -116,6 +136,12 @@ export default function ContactFormSection() {
                                                 placeholder="Tell me more..."
                                             />
                                         </div>
+
+                                        {submitError && (
+                                            <div className="text-xs font-semibold text-red-500 bg-red-500/10 border border-red-500/20 px-4 py-2.5 rounded-xl">
+                                                {submitError}
+                                            </div>
+                                        )}
 
                                         <Button
                                             type="submit"

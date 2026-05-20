@@ -7,8 +7,8 @@ const contactDetails = [
     {
         icon: FiMail,
         label: "Email",
-        value: "revanth.kumar4466@gmail.com",
-        href: "mailto:revanth.kumar4466@gmail.com"
+        value: "bandi@revanthkumar.co.in",
+        href: "mailto:bandi@revanthkumar.co.in"
     },
     {
         icon: FiPhone,

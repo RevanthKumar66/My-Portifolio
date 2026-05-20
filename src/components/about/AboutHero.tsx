@@ -101,8 +101,8 @@ export default function AboutHero() {
                                 </div>
                                 <div className="min-w-0">
                                     <p className="text-[9px] md:text-[10px] text-muted-foreground">Email</p>
-                                    <a href="mailto:revanth.kumar4466@gmail.com" className="text-[10px] md:text-xs font-semibold hover:text-primary transition-colors truncate block">
-                                        revanth.kumar4466@gmail.com
+                                    <a href="mailto:bandi@revanthkumar.co.in" className="text-[10px] md:text-xs font-semibold hover:text-primary transition-colors truncate block">
+                                        bandi@revanthkumar.co.in
                                     </a>
                                 </div>
                             </motion.div>

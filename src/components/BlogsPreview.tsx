@@ -2,29 +2,22 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { FiArrowRight, FiClock } from "react-icons/fi";
+import { FiArrowRight, FiClock, FiTag } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { blogs } from "@/data/blogs";
 
-const blogs = [
-    {
-        title: "Optimizing Next.js Performance",
-        excerpt: "Learn how to improve your Next.js application speed using server components and image optimization.",
-        date: "Dec 20, 2024",
-        slug: "optimizing-nextjs-performance"
-    },
-    {
-        title: "Integrating AI with MERN Stack",
-        excerpt: "A guide to building intelligent web applications by connecting OpenAI API with Node.js backend.",
-        date: "Nov 15, 2024",
-        slug: "integrating-ai-mern-stack"
-    },
-    {
-        title: "Understanding React Server Components",
-        excerpt: "Deep dive into the architecture of RSC and how it changes the way we build React apps.",
-        date: "Oct 05, 2024",
-        slug: "understanding-react-server-components"
-    }
-];
+// Show the 3 most recent blogs (already sorted by newest first in data)
+const latestBlogs = blogs.slice(0, 3);
+
+const categoryColors: Record<string, string> = {
+    "AI & Machine Learning": "bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400",
+    "Full-Stack Development": "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400",
+    "Computer Vision": "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400",
+    "Data Science": "bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400",
+    "System Design": "bg-sky-50 dark:bg-sky-900/20 text-sky-600 dark:text-sky-400",
+    "Career / Learning Journey": "bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400",
+    "DevOps & Cloud": "bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400",
+};
 
 export default function BlogsPreview() {
     return (
@@ -44,7 +37,7 @@ export default function BlogsPreview() {
                     <div>
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary mb-2">Latest Insights</h2>
                         <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
-                            Thoughts on technology, coding, and AI.
+                            Thoughts on AI, full-stack development, and modern engineering.
                         </p>
                     </div>
                     <Link href="/blogs" className="hidden md:block">
@@ -55,33 +48,50 @@ export default function BlogsPreview() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                    {blogs.map((blog, index) => (
-                        <motion.div
-                            key={blog.slug}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.15, duration: 0.5 }}
-                        >
-                            <Link href={`/blogs/${blog.slug}`} className="group block h-full">
-                                <article className="h-full flex flex-col p-4 md:p-6 rounded-lg md:rounded-2xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all duration-500">
-                                    <div className="flex items-center gap-2 mb-2 md:mb-3">
-                                        <FiClock className="text-primary w-3.5 md:w-4 h-3.5 md:h-4" />
-                                        <span className="text-[10px] md:text-xs font-semibold text-primary">{blog.date}</span>
-                                    </div>
-                                    <h3 className="text-sm md:text-lg lg:text-xl font-bold mb-2 md:mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                        {blog.title}
-                                    </h3>
-                                    <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 md:line-clamp-3 mb-3 md:mb-4 flex-1">
-                                        {blog.excerpt}
-                                    </p>
-                                    <div className="flex items-center text-xs md:text-sm font-medium text-primary mt-auto group-hover:gap-3 transition-all duration-300">
-                                        Read Article <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300 w-3.5 md:w-4 h-3.5 md:h-4" />
-                                    </div>
-                                </article>
-                            </Link>
-                        </motion.div>
-                    ))}
+                    {latestBlogs.map((blog, index) => {
+                        const colorClass = categoryColors[blog.category] || "bg-primary/5 text-primary";
+                        return (
+                            <motion.div
+                                key={blog.slug}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.15, duration: 0.5 }}
+                            >
+                                <Link href={`/blogs/${blog.slug}`} className="group block h-full">
+                                    <article className="h-full flex flex-col p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-500">
+
+                                        {/* Category badge */}
+                                        <div className="mb-3">
+                                            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full ${colorClass}`}>
+                                                <FiTag className="w-2.5 h-2.5" />
+                                                {blog.category}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-sm md:text-base lg:text-lg font-bold mb-2 md:mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                                            {blog.title}
+                                        </h3>
+                                        <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 md:line-clamp-3 mb-4 flex-1 leading-relaxed">
+                                            {blog.excerpt}
+                                        </p>
+
+                                        <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+                                            <div className="flex items-center gap-1.5 text-[10px] md:text-xs text-muted-foreground">
+                                                <FiClock className="w-3 h-3" />
+                                                <span>{blog.readTime}</span>
+                                                <span className="text-slate-300 dark:text-slate-700 mx-0.5">•</span>
+                                                <span>{blog.date}</span>
+                                            </div>
+                                            <span className="flex items-center gap-1 text-xs font-medium text-primary group-hover:gap-2 transition-all duration-300">
+                                                Read <FiArrowRight className="w-3 h-3" />
+                                            </span>
+                                        </div>
+                                    </article>
+                                </Link>
+                            </motion.div>
+                        );
+                    })}
                 </div>
 
                 <div className="mt-6 md:hidden text-center">

@@ -9,15 +9,15 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/profile pic.ico",
+            "src": "/profile-pic1.jpg",
             "sizes": "192x192",
-            "type": "image/x-icon",
+            "type": "image/jpeg",
             "purpose": "any maskable"
         },
         {
-            "src": "/profile pic.ico",
+            "src": "/profile-pic1.jpg",
             "sizes": "512x512",
-            "type": "image/x-icon",
+            "type": "image/jpeg",
             "purpose": "any maskable"
         }
     ],

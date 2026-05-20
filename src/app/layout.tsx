@@ -82,16 +82,16 @@ export const metadata: Metadata = {
     },
   },
 
-  // Icons with circular profile
+  // Icons — profile picture used as favicon for Google Search
   icons: {
     icon: [
-      { url: "/profile pic.ico", sizes: "any" },
-      { url: "/profile pic.ico", sizes: "16x16", type: "image/x-icon" },
-      { url: "/profile pic.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/profile-pic1.jpg", sizes: "any", type: "image/jpeg" },
+      { url: "/profile-pic1.jpg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/profile-pic1.jpg", sizes: "16x16", type: "image/jpeg" },
     ],
-    shortcut: "/profile pic.ico",
+    shortcut: "/profile-pic1.jpg",
     apple: [
-      { url: "/profile pic.ico", sizes: "180x180" },
+      { url: "/profile-pic1.jpg", sizes: "180x180", type: "image/jpeg" },
     ],
   },
 
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
     description: "Full Stack MERN Developer and AI Engineer building scalable web applications and intelligent systems. Specializing in React, Node.js, Python, Machine Learning, and Cloud Technologies.",
     images: [
       {
-        url: "/profile pic.jpeg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Revanth Kumar - Full Stack Developer & AI Engineer",
@@ -121,8 +121,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Revanth Kumar | Full Stack Developer & AI Engineer",
     description: "Full Stack MERN Developer and AI Engineer specializing in scalable web applications and AI solutions.",
-    creator: "@revanthkumar",
-    images: ["/profile pic.jpeg"],
+    creator: "@Revanth_Kumar46",
+    images: ["/og-image.jpg"],
   },
 
   // Verification (add your verification codes)

@@ -32,7 +32,7 @@ export default function AboutPreview() {
                                 {/* Profile Image */}
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/My-Gallery/about-preview-my-pic.png"
+                                        src="/profile-pic1.jpg"
                                         alt="Revanth Kumar"
                                         fill
                                         className="object-cover"

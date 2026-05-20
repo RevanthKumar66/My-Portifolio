@@ -7,6 +7,7 @@ export interface BlogPost {
     readTime: string;
     slug: string;
     image: string;
+    tags?: string[];
     content?: string;
     author: {
         name: string;
@@ -17,6 +18,54 @@ export interface BlogPost {
 }
 
 export const blogs: BlogPost[] = [
+    {
+        id: "9",
+        title: "Building Agentic AI Systems: LangChain, AutoGen & Tool-Calling in 2025",
+        excerpt: "A practical breakdown of how agentic AI workflows differ from traditional LLM pipelines — covering multi-agent orchestration, tool-calling, memory management, and real production deployment patterns using LangChain and AutoGen.",
+        date: "May 18, 2026",
+        category: "AI & Machine Learning",
+        readTime: "14 min read",
+        slug: "agentic-ai-langchain-autogen-2025",
+        image: "",
+        tags: ["Agentic AI", "LangChain", "AutoGen", "LLM", "AI Agents", "GPT-4o"],
+        author: {
+            name: "Revanth Kumar",
+            role: "Software Developer & AI Engineer",
+            initials: "RK"
+        }
+    },
+    {
+        id: "8",
+        title: "RAG Pipeline Architecture: Build a Production-Grade Knowledge Base with LLMs",
+        excerpt: "Step-by-step guide to building a Retrieval-Augmented Generation system from scratch — vector embeddings with FAISS/Pinecone, chunking strategies, hybrid search, reranking, and integrating with OpenAI and Gemini APIs.",
+        date: "May 5, 2026",
+        category: "AI & Machine Learning",
+        readTime: "16 min read",
+        slug: "rag-pipeline-production-llm",
+        image: "",
+        tags: ["RAG", "Vector Database", "Pinecone", "FAISS", "LLM", "Embeddings", "OpenAI"],
+        author: {
+            name: "Revanth Kumar",
+            role: "Software Developer & AI Engineer",
+            initials: "RK"
+        }
+    },
+    {
+        id: "7",
+        title: "React 19 & Next.js 15: Everything That Changed and How to Migrate",
+        excerpt: "A complete technical walkthrough of React 19's new hooks (useOptimistic, useFormStatus, use()), Server Actions in Next.js 15, Turbopack stability, and the Partial Prerendering strategy — with real migration examples.",
+        date: "Apr 20, 2026",
+        category: "Full-Stack Development",
+        readTime: "11 min read",
+        slug: "react-19-nextjs-15-migration-guide",
+        image: "",
+        tags: ["React 19", "Next.js 15", "Server Actions", "Turbopack", "Partial Prerendering"],
+        author: {
+            name: "Revanth Kumar",
+            role: "Software Developer & AI Engineer",
+            initials: "RK"
+        }
+    },
     {
         id: "1",
         title: "How I Built a Real-Time ICU Monitoring System Using CV",
@@ -116,5 +165,6 @@ export const categories = [
     "Computer Vision",
     "Data Science",
     "System Design",
+    "DevOps & Cloud",
     "Career / Learning Journey"
 ];

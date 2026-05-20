@@ -105,30 +105,30 @@ export default function Hero() {
                             <motion.div
                                 animate={{ scale: [1, 1.03, 1] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                className="absolute w-[168px] h-[168px] md:w-[360px] md:h-[360px] rounded-full bg-primary/10 dark:bg-primary/10 border border-primary/10"
+                                className="absolute w-[200px] h-[200px] md:w-[360px] md:h-[360px] rounded-full bg-primary/10 dark:bg-primary/10 border border-primary/10"
                             />
                             {/* Ring 1 (Innermost Background) */}
-                            <div className="absolute w-[136px] h-[136px] md:w-[300px] md:h-[300px] rounded-full bg-primary/15 dark:bg-primary/20 border border-primary/10" />
+                            <div className="absolute w-[166px] h-[166px] md:w-[300px] md:h-[300px] rounded-full bg-primary/15 dark:bg-primary/20 border border-primary/10" />
 
                             {/* Profile Image Container */}
-                            <div className="relative w-[120px] h-[120px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
+                            <div className="relative w-[148px] h-[148px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
                                 <div className="relative w-full h-full bg-slate-100 dark:bg-slate-800">
                                     <Image
                                         src="/profile-pic1.jpg"
                                         alt="Revanth Kumar - Full Stack Developer & AI Engineer Portfolio Profile"
                                         fill
-                                        sizes="(max-width: 768px) 120px, 280px"
+                                        sizes="(max-width: 768px) 148px, 280px"
                                         priority
                                         className="object-cover"
                                     />
                                 </div>
                             </div>
 
-                            {/* Floating Badge */}
+                            {/* Floating Badge - hidden on mobile */}
                             <motion.div
                                 animate={{ y: [0, -8, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -bottom-2 right-4 md:right-4 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2"
+                                className="hidden md:flex absolute -bottom-2 right-4 md:right-4 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 items-center gap-2"
                             >
                                 <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>

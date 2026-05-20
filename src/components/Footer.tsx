@@ -99,14 +99,14 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6 lg:gap-8 mb-6 md:mb-8 lg:mb-12">
 
                         {/* Brand Column */}
-                        <div className="md:col-span-5 space-y-3 md:space-y-4 text-center md:text-left">
+                        <div className="md:col-span-5 space-y-3 md:space-y-4 text-left md:text-left">
                             <Link href="/" className="inline-block group">
                                 <RollingText text="REVANTH KUMAR" className="text-lg md:text-xl lg:text-2xl font-bold tracking-wider" />
                             </Link>
-                            <p className="text-slate-600 dark:text-slate-400 text-[11px] md:text-[13px] lg:text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+                            <p className="text-slate-600 dark:text-slate-400 text-[11px] md:text-[13px] lg:text-sm leading-relaxed max-w-sm mx-0">
                                 Full Stack MERN Developer & AI Engineer building scalable web applications and intelligent systems.
                             </p>
-                            <div className="flex flex-col space-y-2 md:space-y-3 text-[11px] md:text-[13px] lg:text-sm text-slate-600 dark:text-slate-400 items-center md:items-start">
+                            <div className="flex flex-col space-y-2 md:space-y-3 text-[11px] md:text-[13px] lg:text-sm text-slate-600 dark:text-slate-400 items-start">
                                 <div className="flex items-center gap-2">
                                     <FiMapPin className="text-primary flex-shrink-0" size={16} />
                                     <span>Andhra Pradesh, India</span>
@@ -119,9 +119,9 @@ export default function Footer() {
                         </div>
 
                         {/* Quick Links */}
-                        <div className="md:col-span-3 text-center md:text-left">
+                        <div className="md:col-span-3 text-left md:text-left">
                             <h3 className="font-bold text-slate-900 dark:text-white text-xs md:text-sm mb-3 md:mb-4">Quick Links</h3>
-                            <ul className="space-y-2 md:space-y-2 text-[11px] md:text-xs lg:text-sm text-slate-600 dark:text-slate-400 flex flex-col items-center md:items-start">
+                            <ul className="space-y-2 md:space-y-2 text-[11px] md:text-xs lg:text-sm text-slate-600 dark:text-slate-400 flex flex-col items-start">
                                 <li><Link href="/" className="hover:text-primary transition-colors py-1 block">Home</Link></li>
                                 <li><Link href="/about" className="hover:text-primary transition-colors py-1 block">About</Link></li>
                                 <li><Link href="/projects" className="hover:text-primary transition-colors py-1 block">Projects</Link></li>
@@ -131,11 +131,11 @@ export default function Footer() {
                         </div>
 
                         {/* Social Connect & Subscribe */}
-                        <div className="md:col-span-4 text-center md:text-left">
+                        <div className="md:col-span-4 text-left md:text-left">
                             <h3 className="font-bold text-slate-900 dark:text-white text-xs md:text-sm mb-3 md:mb-4">Let&apos;s Connect</h3>
 
                             {/* Social Icons */}
-                            <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 mb-5 md:mb-6">
+                            <div className="flex flex-wrap justify-start md:justify-start gap-2 md:gap-3 mb-5 md:mb-6">
                                 <a href="https://www.linkedin.com/in/revanthkumar66/" target="_blank" rel="noopener noreferrer" className="p-2 md:p-2.5 rounded-lg bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm">
                                     <FiLinkedin size={18} className="md:w-[18px] md:h-[18px]" />
                                 </a>
@@ -154,7 +154,7 @@ export default function Footer() {
                             </div>
 
                             {/* Subscribe Form */}
-                            <div className="max-w-xs mx-auto md:max-w-none">
+                            <div className="max-w-xs md:max-w-none">
                                 <h4 className="text-xs md:text-sm font-semibold text-slate-900 dark:text-white mb-2 md:mb-3">Subscribe to Newsletter</h4>
                                 <form onSubmit={handleSubscribe} className="flex gap-1.5 md:gap-2">
                                     <input

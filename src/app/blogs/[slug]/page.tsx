@@ -22,14 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: post.title,
             description: post.excerpt,
             type: "article",
-            url: `https://revanthkumar.dev/blogs/${post.slug}`,
-            images: [{ url: post.image || "/profile pic.jpeg" }],
+            url: `https://revanthkumar.co.in/blogs/${post.slug}`,
+            images: [{ url: post.image || "/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg" }],
         },
         twitter: {
             card: "summary_large_image",
             title: post.title,
             description: post.excerpt,
-            images: [post.image || "/profile pic.jpeg"],
+            images: [post.image || "/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg"],
         },
     };
 }
@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
-        "image": post.image || "https://revanthkumar.dev/profile pic.jpeg",
+        "image": post.image || "https://revanthkumar.co.in/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg",
         "datePublished": post.date,
         "author": {
             "@type": "Person",

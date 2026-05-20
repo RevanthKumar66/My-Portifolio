@@ -32,8 +32,8 @@ export default function AboutPreview() {
                                 {/* Profile Image */}
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/profile-pic1.jpg"
-                                        alt="Revanth Kumar"
+                                        src="/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg"
+                                        alt="Revanth Kumar - Professional AI Engineer and MERN Stack Developer Portrait"
                                         fill
                                         className="object-cover"
                                         priority

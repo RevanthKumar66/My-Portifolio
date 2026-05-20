@@ -63,14 +63,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: `${project.title} Case Study | Revanth Kumar`,
             description: project.description,
             type: "article",
-            url: `https://revanthkumar.dev/projects/${slug}`,
-            images: [{ url: "/profile pic.jpeg" }],
+            url: `https://revanthkumar.co.in/projects/${slug}`,
+            images: [{ url: "/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg" }],
         },
         twitter: {
             card: "summary_large_image",
             title: `${project.title} Case Study | Revanth Kumar`,
             description: project.description,
-            images: ["/profile pic.jpeg"],
+            images: ["/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg"],
         },
     };
 }
@@ -107,7 +107,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         "author": {
             "@type": "Person",
             "name": "Revanth Kumar",
-            "url": "https://revanthkumar.dev"
+            "url": "https://revanthkumar.co.in"
         },
         "softwareHelp": {
             "@type": "CreativeWork",

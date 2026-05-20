@@ -18,13 +18,13 @@ const education = {
         "Active member of coding club and hackathons"
     ],
     images: [
-        "/My-Gallery/graduation1.jpeg",
-        "/My-Gallery/Graduation2.jpeg",
-        "/My-Gallery/Graduation3.jpeg"
+        "/My-Gallery/revanth-kumar-graduation-ceremony.jpeg",
+        "/My-Gallery/revanth-kumar-btech-graduation.jpeg",
+        "/My-Gallery/revanth-kumar-degree-convocation.jpeg"
     ],
     idCards: [
-        "/My-Gallery/college-ID-front.jpeg",
-        "/My-Gallery/College-ID-back.jpeg"
+        "/My-Gallery/revanth-kumar-college-id-front.jpeg",
+        "/My-Gallery/revanth-kumar-college-id-back.jpeg"
     ]
 };
 
@@ -94,7 +94,7 @@ export default function Education() {
                                                     >
                                                         <Image
                                                             src={card}
-                                                            alt={`ID Card ${idx + 1}`}
+                                                            alt={`Revanth Kumar College Student ID Card - PACE Institute of Technology and Sciences - Photo ${idx + 1}`}
                                                             fill
                                                             className="object-cover"
                                                             sizes="32px"
@@ -150,7 +150,7 @@ export default function Education() {
                                             >
                                                 <Image
                                                     src={image}
-                                                    alt={`Graduation ${index + 1}`}
+                                                    alt={`Revanth Kumar B.Tech Artificial Intelligence and Data Science Graduation Convocation Ceremony Ceremony - Photo ${index + 1}`}
                                                     fill
                                                     className="object-cover photo-frame-image"
                                                     sizes="224px"

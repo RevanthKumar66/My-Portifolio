@@ -10,8 +10,8 @@ const achievement = {
     event: "42learn AI/ML & Data Science Internship",
     description: "Excited to announce that I've won the 1st prize in the Hackathon coding exam! This achievement marks the successful completion of a 3-week AI/ML and Data Science internship with 42learn, hosted at my college. The experience was a deep dive into the world of Innovation and Technology, pushing the boundaries of my Coding Skills. Grateful for this opportunity and looking forward to applying these learnings in my future endeavors! 🚀🏅",
     images: [
-        "/My-Gallery/achievment1.jpeg",
-        "/My-Gallery/achievment2.jpeg"
+        "/My-Gallery/revanth-kumar-hackathon-achievement.jpeg",
+        "/My-Gallery/revanth-kumar-tech-competition-award.jpeg"
     ]
 };
 
@@ -109,7 +109,7 @@ export default function AchievementsSection() {
                                         >
                                             <Image
                                                 src={image}
-                                                alt={`Achievement ${index + 1}`}
+                                                alt={`Revanth Kumar receiving 1st prize in AI/ML & Data Science Hackathon coding competition - Photo ${index + 1}`}
                                                 fill
                                                 className="object-cover"
                                                 sizes="192px"

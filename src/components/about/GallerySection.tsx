@@ -7,17 +7,17 @@ import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 // Gallery images with their actual aspect ratios
 const galleryImages = [
-    { src: "/My-Gallery/pic1.jpeg", type: "landscape" }, // Landscape
-    { src: "/My-Gallery/pic2.jpeg", type: "portrait" }, // Portrait
-    { src: "/My-Gallery/pic3.jpeg", type: "landscape" }, // Landscape
-    { src: "/My-Gallery/Graduation4.jpeg", type: "portrait" }, // Portrait
-    { src: "/My-Gallery/Graduation5.jpeg", type: "portrait" }, // Portrait
-    { src: "/My-Gallery/Graduation6.jpeg", type: "square" }, // Square
-    { src: "/My-Gallery/Graduation7.jpeg", type: "portrait" }, // Portrait
-    { src: "/My-Gallery/Graduation8.jpeg", type: "portrait" }, // Portrait
-    { src: "/My-Gallery/pic4.jpeg", type: "landscape" }, // Landscape
-    { src: "/My-Gallery/pic6.jpeg", type: "landscape" }, // Landscape
-    { src: "/My-Gallery/pic7.jpeg", type: "portrait" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-mern-stack-developer-workspace.jpeg", type: "landscape", alt: "Revanth Kumar MERN stack web developer workspace coding desk" }, // Landscape
+    { src: "/My-Gallery/revanth-kumar-ai-engineer-seminar.jpeg", type: "portrait", alt: "Revanth Kumar attending AI engineering technical seminar workshop" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-tech-expert-headshot.jpeg", type: "landscape", alt: "Revanth Kumar software developer professional portrait headshot" }, // Landscape
+    { src: "/My-Gallery/revanth-kumar-btech-graduation-portrait.jpeg", type: "portrait", alt: "Revanth Kumar B.Tech Artificial Intelligence and Data Science graduation portrait photo" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-graduation-celebration-event.jpeg", type: "portrait", alt: "Revanth Kumar celebrating engineering college graduation event" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-graduation-cap-toss-ceremony.jpeg", type: "square", alt: "Revanth Kumar graduation cap toss ceremony convocation day" }, // Square
+    { src: "/My-Gallery/revanth-kumar-campus-graduation-day.jpeg", type: "portrait", alt: "Revanth Kumar posing on engineering college campus during graduation day" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-convocation-day-memories.jpeg", type: "portrait", alt: "Revanth Kumar degree convocation graduation day holding certificate folder" }, // Portrait
+    { src: "/My-Gallery/revanth-kumar-software-engineering-meetup.jpeg", type: "landscape", alt: "Revanth Kumar software engineering developer meetup networking session" }, // Landscape
+    { src: "/My-Gallery/revanth-kumar-ai-project-presentation.jpeg", type: "landscape", alt: "Revanth Kumar presenting machine learning artificial intelligence project" }, // Landscape
+    { src: "/My-Gallery/revanth-kumar-web-developer-profile.jpeg", type: "portrait", alt: "Revanth Kumar web application developer profile photo" }, // Portrait
 ];
 
 // Split into 2 rows for better bento layout
@@ -116,7 +116,7 @@ export default function GallerySection() {
                                         <div className="relative w-full h-full overflow-hidden">
                                             <Image
                                                 src={image.src}
-                                                alt={`Gallery ${globalIndex + 1}`}
+                                                alt={image.alt}
                                                 fill
                                                 className="object-cover photo-frame-image transition-transform duration-500 group-hover:scale-110"
                                                 sizes="(max-width: 768px) 100vw, 320px"
@@ -153,7 +153,7 @@ export default function GallerySection() {
                                         <div className="relative w-full h-full overflow-hidden">
                                             <Image
                                                 src={image.src}
-                                                alt={`Gallery ${globalIndex + 1}`}
+                                                alt={image.alt}
                                                 fill
                                                 className="object-cover photo-frame-image transition-transform duration-500 group-hover:scale-110"
                                                 sizes="(max-width: 768px) 100vw, 320px"
@@ -222,7 +222,7 @@ export default function GallerySection() {
                             >
                                 <Image
                                     src={galleryImages[selectedImage].src}
-                                    alt={`Gallery ${selectedImage + 1}`}
+                                    alt={galleryImages[selectedImage].alt}
                                     fill
                                     className="object-contain"
                                     sizes="100vw"

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/', '/admin/'],
         },
-        sitemap: 'https://revanthkumar.dev/sitemap.xml',
+        sitemap: 'https://revanthkumar.co.in/sitemap.xml',
     };
 }

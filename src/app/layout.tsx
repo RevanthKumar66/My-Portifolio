@@ -35,33 +35,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   // Basic Metadata
   title: {
-    default: "Revanth Kumar",
+    default: "Revanth Kumar | Full Stack Developer & AI Engineer",
     template: "%s | Revanth Kumar",
   },
-  description: "Portfolio of Revanth Kumar, a Full Stack MERN Developer and AI Engineer specializing in building scalable web applications, AI-powered systems, and data science solutions. Expert in React, Node.js, Python, TensorFlow, and cloud technologies.",
+  description: "Revanth Kumar is a Full Stack MERN Developer and AI Engineer specializing in React, Node.js, Next.js, NestJS, TypeScript, AI systems, scalable backend architecture, and modern web applications.",
 
   // Keywords for SEO
   keywords: [
     "Revanth Kumar",
-    "Full Stack Developer",
-    "MERN Stack Developer",
-    "AI Engineer",
-    "Data Science",
-    "Machine Learning",
-    "React Developer",
-    "Node.js Developer",
-    "Python Developer",
-    "Web Development",
-    "Software Engineer",
-    "Deepvibe IT Solutions",
-    "Portfolio",
-    "AI Solutions",
-    "Cloud Computing",
-    "AWS",
-    "Docker",
-    "MongoDB",
-    "TypeScript",
-    "Next.js Developer",
+    "revanth",
+    "revanth kumar developer",
+    "full stack developer",
+    "software engineer",
+    "MERN stack developer",
+    "AI engineer",
+    "Next.js developer",
+    "React developer Hyderabad",
+    "NestJS",
+    "TypeScript"
   ],
 
   // Authors
@@ -102,16 +93,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://revanthkumar.dev",
+    url: "https://revanthkumar.co.in",
     siteName: "Revanth Kumar Portfolio",
-    title: "Revanth Kumar | Full Stack Developer & AI Engineer",
-    description: "Full Stack MERN Developer and AI Engineer building scalable web applications and intelligent systems. Specializing in React, Node.js, Python, Machine Learning, and Cloud Technologies.",
+    title: "Revanth Kumar | Full Stack Developer",
+    description: "Full Stack MERN Developer and AI Engineer",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Revanth Kumar - Full Stack Developer & AI Engineer",
+        alt: "Revanth Kumar - Full Stack MERN Developer & AI Engineer",
       },
     ],
   },
@@ -119,8 +110,8 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Revanth Kumar | Full Stack Developer & AI Engineer",
-    description: "Full Stack MERN Developer and AI Engineer specializing in scalable web applications and AI solutions.",
+    title: "Revanth Kumar",
+    description: "Full Stack MERN Developer and AI Engineer",
     creator: "@Revanth_Kumar46",
     images: ["/og-image.jpg"],
   },
@@ -141,7 +132,7 @@ export const metadata: Metadata = {
   category: "technology",
 
   // Other metadata
-  metadataBase: new URL("https://revanthkumar.dev"),
+  metadataBase: new URL("https://revanthkumar.co.in"),
 
   // App links (if you have mobile apps)
   // appLinks: {},
@@ -168,15 +159,56 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Revanth Kumar",
-              "url": "https://revanthkumar.dev",
-              "jobTitle": "Full Stack Developer & AI Engineer",
+              "url": "https://revanthkumar.co.in",
+              "image": "https://revanthkumar.co.in/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg",
               "sameAs": [
                 "https://github.com/RevanthKumar66",
                 "https://www.linkedin.com/in/revanthkumar66/",
-                "https://x.com/Revanth_Kumar46/"
+                "https://x.com/Revanth_Kumar46/",
+                "https://instagram.com/revanthkumar_66"
               ],
-              "knowsAbout": ["Web Development", "Artificial Intelligence", "React", "Node.js", "Python", "Machine Learning"],
-              "description": "Full Stack MERN Developer and AI Engineer building scalable web applications and intelligent systems."
+              "jobTitle": "Full Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance / Software Engineer"
+              },
+              "knowsAbout": ["React", "Next.js", "Node.js", "NestJS", "TypeScript", "AI Engineering", "System Design"],
+              "description": "Revanth Kumar is a Full Stack MERN Developer and AI Engineer specializing in React, Node.js, Next.js, NestJS, TypeScript, AI systems, scalable backend architecture, and modern web applications."
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Who is Revanth Kumar?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Revanth Kumar is a professional Full Stack MERN Developer and AI Engineer specializing in React, Next.js, Node.js, NestJS, TypeScript, and building intelligent web systems."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What services does Revanth Kumar offer?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Revanth Kumar offers end-to-end full stack development (MERN stack, Next.js), AI/ML integration, database architecture, and custom software development services."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where is Revanth Kumar based?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Revanth Kumar is based in Hyderabad, India."
+                  }
+                }
+              ]
             }),
           }}
         />
@@ -187,10 +219,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Revanth Kumar Portfolio",
-              "url": "https://revanthkumar.dev",
+              "url": "https://revanthkumar.co.in",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://revanthkumar.dev/blogs?search={search_term_string}",
+                "target": "https://revanthkumar.co.in/blogs?search={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }),

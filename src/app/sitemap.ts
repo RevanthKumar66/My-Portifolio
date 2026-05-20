@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogs } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://revanthkumar.dev';
+    const baseUrl = 'https://revanthkumar.co.in';
     const currentDate = new Date();
 
     const blogUrls = blogs.map((post) => ({

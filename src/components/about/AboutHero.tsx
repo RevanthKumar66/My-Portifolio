@@ -159,8 +159,8 @@ export default function AboutHero() {
                             {/* Image Container */}
                             <div className="relative w-full h-full rounded-lg md:rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-2xl">
                                 <Image
-                                    src="/My-Gallery/about-hero-my-pic.png"
-                                    alt="Revanth Kumar"
+                                    src="/My-Gallery/revanth-kumar-about-hero-profile.png"
+                                    alt="Revanth Kumar - Software Developer and AI Engineer Professional Profile"
                                     fill
                                     className="object-cover"
                                     priority

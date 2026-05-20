@@ -50,29 +50,16 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="flex flex-col items-center md:items-start space-y-4 md:space-y-3 w-full"
                     >
-                        <h1 className="text-[22px] md:text-3xl text-foreground font-bold leading-tight">
-                            <AnimatedLogo />
+                        <h1 className="text-[26px] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
+                            Revanth Kumar — <span className="text-primary">Full Stack Developer & AI Engineer</span>
                         </h1>
 
-                        <div className="space-y-2 min-h-[50px] md:min-h-[70px] flex flex-col items-center md:items-start">
-                            <h2 className="text-[18px] sm:text-[20px] md:text-4xl lg:text-5xl font-bold tracking-tight text-primary">
-                                <TypeAnimation
-                                    sequence={[
-                                        'Software Developer',
-                                        2000,
-                                        'AI Engineer',
-                                        2000,
-                                        'Full Stack Dev',
-                                        2000,
-                                    ]}
-                                    wrapper="span"
-                                    speed={50}
-                                    repeat={Infinity}
-                                    cursor={true}
-                                />
+                        <div className="space-y-2 flex flex-col items-center md:items-start">
+                            <h2 className="text-[15px] sm:text-[17px] md:text-xl lg:text-2xl font-bold tracking-tight text-slate-700 dark:text-slate-300">
+                                React.js | Next.js | Node.js | NestJS | AI Systems
                             </h2>
                             <p className="text-[13px] md:text-base text-muted-foreground max-w-sm md:max-w-md leading-relaxed">
-                                Building scalable web apps & AI solutions.
+                                Specializing in building scalable MERN web applications, AI-powered systems, and modern software architectures.
                             </p>
                         </div>
 
@@ -114,8 +101,8 @@ export default function Hero() {
                             <div className="relative w-[148px] h-[148px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
                                 <div className="relative w-full h-full bg-slate-100 dark:bg-slate-800">
                                     <Image
-                                        src="/profile-pic1.jpg"
-                                        alt="Revanth Kumar - Full Stack Developer & AI Engineer Portfolio Profile"
+                                        src="/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg"
+                                        alt="Revanth Kumar - Full Stack MERN Stack Developer and AI Engineer Portfolio Profile Picture"
                                         fill
                                         sizes="(max-width: 768px) 148px, 280px"
                                         priority

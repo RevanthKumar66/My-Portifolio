@@ -220,14 +220,13 @@ export async function POST(request: Request) {
             console.log("Delivering via SMTP Nodemailer Transporter...");
             const transporter = nodemailer.createTransport({
                 host: smtpHost,
-                port: Number(smtpPort) || 587,
+                port: Number(smtpPort) || 465,
                 secure: Number(smtpPort) === 465,
                 auth: {
                     user: smtpUser,
                     pass: smtpPass
                 },
                 tls: {
-                    ciphers: "SSLv3",
                     rejectUnauthorized: false
                 }
             });

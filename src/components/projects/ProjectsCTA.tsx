@@ -30,7 +30,7 @@ export default function ProjectsCTA() {
                         Have a project in <span className="text-primary">mind?</span>
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                        I'm always looking for high-impact technical collaborations and innovative engineering roles. Let's build something extraordinary together.
+                        I&apos;m always looking for high-impact technical collaborations and innovative engineering roles. Let&apos;s build something extraordinary together.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Button

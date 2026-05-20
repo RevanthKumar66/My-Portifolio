@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import AnimatedLogo from "@/components/AnimatedLogo";
@@ -112,10 +113,13 @@ export default function Hero() {
                             {/* Profile Image Container */}
                             <div className="relative w-[120px] h-[120px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
                                 <div className="relative w-full h-full bg-slate-100 dark:bg-slate-800">
-                                    <img
+                                    <Image
                                         src="/profile-pic1.jpg"
                                         alt="Revanth Kumar - Full Stack Developer & AI Engineer Portfolio Profile"
-                                        className="object-cover w-full h-full"
+                                        fill
+                                        sizes="(max-width: 768px) 120px, 280px"
+                                        priority
+                                        className="object-cover"
                                     />
                                 </div>
                             </div>

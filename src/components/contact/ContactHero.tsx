@@ -52,7 +52,7 @@ export default function ContactHero() {
                     >
                         <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-[10px] md:text-xs font-medium text-primary uppercase tracking-widest mb-1.5 md:mb-2">
                             <span className="flex h-1.5 w-1.5 rounded-full bg-primary mr-1.5 animate-pulse"></span>
-                            Let's Connect
+                            Let&apos;s Connect
                         </div>
 
                         <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-1.5 md:mb-2">
@@ -60,7 +60,7 @@ export default function ContactHero() {
                         </h1>
 
                         <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-xl">
-                            I’m open to <span className="text-foreground font-semibold">internships, full-time roles, freelance projects</span>, and collaborations. Let's start a conversation.
+                            I&apos;m open to <span className="text-foreground font-semibold">internships, full-time roles, freelance projects</span>, and collaborations. Let&apos;s start a conversation.
                         </p>
                     </motion.div>
 

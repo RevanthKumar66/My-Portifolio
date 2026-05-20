@@ -5,9 +5,14 @@ import ContactSocials from "@/components/contact/ContactSocials";
 import ContactAvailability from "@/components/contact/ContactAvailability";
 import ContactFAQ from "@/components/contact/ContactFAQ";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Contact | Revanth Kumar",
     description: "Get in touch for internships, full-time roles, freelance projects, and collaborations. Let's build something extraordinary together.",
+    alternates: {
+        canonical: "/contact",
+    },
 };
 
 export default function ContactPage() {

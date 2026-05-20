@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaAws, FaDocker, FaGitAlt, FaLinux } from "react-icons/fa";
-import { SiTypescript, SiMongodb, SiPostgresql, SiRedux, SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiNumpy, SiOpenai, SiHuggingface, SiTailwindcss, SiFigma, SiVercel, SiExpress } from "react-icons/si";
+import { SiTypescript, SiMongodb, SiPostgresql, SiRedux, SiTensorflow, SiPytorch, SiScikitlearn, SiTailwindcss, SiExpress } from "react-icons/si";
 
 const skillCategories = [
     {

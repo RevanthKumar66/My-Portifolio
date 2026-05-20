@@ -75,7 +75,7 @@ export default function Footer() {
                             Ready to build something <span className="text-primary">extraordinary?</span>
                         </h2>
                         <p className="text-muted-foreground text-xs md:text-sm lg:text-base max-w-2xl mx-auto leading-relaxed">
-                            Let's collaborate and bring your ideas to life with cutting-edge technology.
+                            Let&apos;s collaborate and bring your ideas to life with cutting-edge technology.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 md:gap-4">
                             <Button
@@ -125,7 +125,6 @@ export default function Footer() {
                                 <li><Link href="/" className="hover:text-primary transition-colors py-1 block">Home</Link></li>
                                 <li><Link href="/about" className="hover:text-primary transition-colors py-1 block">About</Link></li>
                                 <li><Link href="/projects" className="hover:text-primary transition-colors py-1 block">Projects</Link></li>
-                                <li><Link href="/services" className="hover:text-primary transition-colors py-1 block">Services</Link></li>
                                 <li><Link href="/blogs" className="hover:text-primary transition-colors py-1 block">Blogs</Link></li>
                                 <li><Link href="/contact" className="hover:text-primary transition-colors py-1 block">Contact</Link></li>
                             </ul>
@@ -133,7 +132,7 @@ export default function Footer() {
 
                         {/* Social Connect & Subscribe */}
                         <div className="md:col-span-4 text-center md:text-left">
-                            <h3 className="font-bold text-slate-900 dark:text-white text-xs md:text-sm mb-3 md:mb-4">Let's Connect</h3>
+                            <h3 className="font-bold text-slate-900 dark:text-white text-xs md:text-sm mb-3 md:mb-4">Let&apos;s Connect</h3>
 
                             {/* Social Icons */}
                             <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 mb-5 md:mb-6">

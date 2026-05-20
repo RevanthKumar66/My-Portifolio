@@ -79,7 +79,7 @@ export default function AboutPreview() {
                             </h3>
                             <div className="space-y-3 md:space-y-4 text-[13px] md:text-sm lg:text-base text-muted-foreground leading-relaxed">
                                 <p>
-                                    I'm a <strong>B.Tech graduate in AI & Data Science</strong>, currently working as a <strong>MERN Stack Developer</strong> at Deepvibe IT Solutions. I build scalable web applications that solve real-world problems.
+                                    I&apos;m a <strong>B.Tech graduate in AI & Data Science</strong>, currently working as a <strong>MERN Stack Developer</strong> at Deepvibe IT Solutions. I build scalable web applications that solve real-world problems.
                                 </p>
                             </div>
                         </div>

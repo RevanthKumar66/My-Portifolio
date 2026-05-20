@@ -134,7 +134,7 @@ export const metadata: Metadata = {
 
   // Alternate languages (if applicable)
   alternates: {
-    canonical: "https://revanthkumar.dev",
+    canonical: "/",
   },
 
   // Category

@@ -49,13 +49,13 @@ export default function DetailedStory() {
 
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                             Through internships at <span className="font-semibold">Deepvibe IT Solutions</span>, <span className="font-semibold">42Learn</span>,
-                            and <span className="font-semibold">CodeTantra</span>, I've had the privilege of working on diverse projects—from
+                            and <span className="font-semibold">CodeTantra</span>, I&apos;ve had the privilege of working on diverse projects—from
                             building responsive web applications to developing AI-powered systems for healthcare and education.
                         </p>
 
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                            Today, I'm driven by the challenge of transforming complex problems into elegant,
-                            user-friendly solutions. Whether it's optimizing performance, implementing cutting-edge
+                            Today, I&apos;m driven by the challenge of transforming complex problems into elegant,
+                            user-friendly solutions. Whether it&apos;s optimizing performance, implementing cutting-edge
                             AI models, or crafting intuitive interfaces, I approach each project with dedication
                             and a commitment to excellence.
                         </p>
@@ -110,7 +110,7 @@ export default function DetailedStory() {
                                 <div>
                                     <h3 className="text-base font-bold mb-1">Passion</h3>
                                     <p className="text-sm text-muted-foreground">
-                                        I'm passionate about continuous learning, open-source contribution,
+                                        I&apos;m passionate about continuous learning, open-source contribution,
                                         and mentoring aspiring developers to achieve their goals.
                                     </p>
                                 </div>

@@ -11,6 +11,8 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import Image from "next/image";
 
+import type { Swiper as SwiperType } from 'swiper';
+
 const featuredProjects = [
     {
         title: "Deepvibe IT Solutions",
@@ -47,7 +49,7 @@ const featuredProjects = [
 ];
 
 export default function FeaturedProjects() {
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperType | null>(null);
 
     return (
         <section className="relative py-12 md:py-16 lg:py-20 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 overflow-hidden">

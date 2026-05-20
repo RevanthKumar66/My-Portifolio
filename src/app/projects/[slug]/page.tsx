@@ -1,8 +1,20 @@
 import { Button } from "@/components/ui/Button";
 import { FiGithub, FiExternalLink, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
+import { Metadata } from "next";
 
-const projectsData: Record<string, any> = {
+interface Project {
+    title: string;
+    description: string;
+    overview: string;
+    problem: string;
+    techStack: string[];
+    challenges: string;
+    github: string;
+    demo: string;
+}
+
+const projectsData: Record<string, Project> = {
     "pneumonia-detection": {
         title: "Pneumonia Detection",
         description: "Deep learning model to detect pneumonia from chest X-ray images with high accuracy using CNNs.",
@@ -35,6 +47,34 @@ const projectsData: Record<string, any> = {
     }
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const project = projectsData[slug];
+
+    if (!project) return { title: "Project Case Study | Revanth Kumar" };
+
+    return {
+        title: `${project.title} | Revanth Kumar`,
+        description: project.description,
+        alternates: {
+            canonical: `/projects/${slug}`,
+        },
+        openGraph: {
+            title: `${project.title} Case Study | Revanth Kumar`,
+            description: project.description,
+            type: "article",
+            url: `https://revanthkumar.dev/projects/${slug}`,
+            images: [{ url: "/profile pic.jpeg" }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${project.title} Case Study | Revanth Kumar`,
+            description: project.description,
+            images: ["/profile pic.jpeg"],
+        },
+    };
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const project = projectsData[slug];
@@ -57,8 +97,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         );
     }
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": project.title,
+        "description": project.description,
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "author": {
+            "@type": "Person",
+            "name": "Revanth Kumar",
+            "url": "https://revanthkumar.dev"
+        },
+        "softwareHelp": {
+            "@type": "CreativeWork",
+            "name": `${project.title} Overview`,
+            "text": project.overview
+        }
+    };
+
     return (
         <div className="container py-12 md:py-24 px-4 md:px-6">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <Link href="/projects">
                 <Button variant="ghost" className="mb-8 pl-0 hover:bg-transparent hover:text-primary">
                     <FiArrowLeft className="mr-2" /> Back to Projects

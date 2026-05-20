@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/Button";
 import { FiArrowLeft, FiClock, FiCalendar, FiTag, FiLinkedin, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: post.title,
         description: post.excerpt,
+        alternates: {
+            canonical: `/blogs/${post.slug}`,
+        },
         openGraph: {
             title: post.title,
             description: post.excerpt,
@@ -114,11 +116,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                     <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">The Challenge</h2>
                     <p>
-                        Every innovative project begins with a specific problem. For {post.title}, the initial hurdle was defining the scope while maintaining high performance. We often find that in technical projects, the most difficult part isn't finding a solution, but finding the *right* solution that scales.
+                        Every innovative project begins with a specific problem. For {post.title}, the initial hurdle was defining the scope while maintaining high performance. We often find that in technical projects, the most difficult part isn&apos;t finding a solution, but finding the *right* solution that scales.
                     </p>
 
                     <div className="bg-slate-50 dark:bg-slate-900 p-8 my-10 rounded-3xl border border-slate-200 dark:border-slate-800 italic text-xl">
-                        "In modern software engineering, complexity is the enemy. Simplicity is the ultimate sophistication."
+                        &quot;In modern software engineering, complexity is the enemy. Simplicity is the ultimate sophistication.&quot;
                     </div>
 
                     <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Technical Implementation</h2>

@@ -2,8 +2,8 @@
 
 import { FaReact, FaNodeJs, FaPython, FaAws, FaDocker, FaGitAlt, FaLinux } from "react-icons/fa";
 import {
-    SiNextdotjs, SiMongodb, SiTensorflow, SiTailwindcss, SiTypescript,
-    SiPostgresql, SiFirebase, SiGraphql, SiExpress, SiPytorch,
+    SiMongodb, SiTensorflow, SiTailwindcss, SiTypescript,
+    SiPostgresql, SiExpress, SiPytorch,
     SiScikitlearn, SiPandas, SiNumpy, SiOpenai, SiHuggingface,
     SiVercel, SiFigma, SiRedux
 } from "react-icons/si";

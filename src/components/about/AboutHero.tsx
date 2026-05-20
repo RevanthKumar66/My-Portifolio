@@ -64,7 +64,7 @@ export default function AboutHero() {
                         </div>
 
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
-                            Hi, I'm <span className="text-primary">Revanth Kumar</span>
+                            Hi, I&apos;m <span className="text-primary">Revanth Kumar</span>
                         </h1>
 
                         <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed">

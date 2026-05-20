@@ -91,7 +91,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                                     <FiX className="w-4 h-4" />
                                 </button>
                                 <h2 className="text-xl font-bold text-foreground">Start a Project</h2>
-                                <p className="text-xs text-muted-foreground mt-0.5">Let's build something amazing together</p>
+                                <p className="text-xs text-muted-foreground mt-0.5">Let&apos;s build something amazing together</p>
                             </div>
 
                             {/* Form */}

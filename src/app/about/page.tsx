@@ -9,9 +9,14 @@ import GallerySection from "@/components/about/GallerySection";
 import PersonalValues from "@/components/about/PersonalValues";
 import Interests from "@/components/about/Interests";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "About Me",
     description: "Learn more about Revanth Kumar - Full Stack Developer & AI Engineer. My journey, skills, experience, and passion for technology.",
+    alternates: {
+        canonical: "/about",
+    },
 };
 
 export default function AboutPage() {

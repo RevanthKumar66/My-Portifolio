@@ -42,7 +42,7 @@ export default function CTASection() {
                     </h2>
 
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                        Let's discuss how I can help bring your ideas to life with modern technology and expert development.
+                        Let&apos;s discuss how I can help bring your ideas to life with modern technology and expert development.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

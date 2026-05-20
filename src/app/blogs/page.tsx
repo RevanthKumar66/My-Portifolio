@@ -1,12 +1,16 @@
 import BlogHero from "@/components/blog/BlogHero";
 import FeaturedPost from "@/components/blog/FeaturedPost";
 import BlogList from "@/components/blog/BlogList";
-import Newsletter from "@/components/blog/Newsletter";
 import { blogs } from "@/data/blogs";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Blog | Revanth Kumar",
     description: "Insights on AI, Full-Stack Development, Computer Vision, and Software Engineering journey.",
+    alternates: {
+        canonical: "/blogs",
+    },
 };
 
 export default function BlogsPage() {

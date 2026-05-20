@@ -53,7 +53,7 @@ export default function ContactFormSection() {
                                     exit={{ opacity: 0, y: -10 }}
                                 >
                                     <h2 className="text-xl md:text-2xl font-bold mb-1.5 md:mb-2">Send a <span className="text-primary">Message</span></h2>
-                                    <p className="text-xs md:text-sm text-muted-foreground mb-5 md:mb-8">I'll get back to you within 24 hours.</p>
+                                    <p className="text-xs md:text-sm text-muted-foreground mb-5 md:mb-8">I&apos;ll get back to you within 24 hours.</p>
 
                                     <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-4">
@@ -149,7 +149,7 @@ export default function ContactFormSection() {
                                         <FiCheckCircle size={30} />
                                     </div>
                                     <h2 className="text-xl font-bold mb-2">Message Sent!</h2>
-                                    <p className="text-xs text-muted-foreground mb-6">Received safely. I'll reply soon.</p>
+                                    <p className="text-xs text-muted-foreground mb-6">Received safely. I&apos;ll reply soon.</p>
                                     <Button
                                         variant="outline"
                                         size="sm"

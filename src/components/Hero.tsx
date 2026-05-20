@@ -13,7 +13,7 @@ export default function Hero() {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     return (
-        <section className="hero-section relative min-h-[auto] md:min-h-[50vh] flex items-center pt-20 md:pt-24 pb-8 md:pb-12 px-4 md:px-0 overflow-hidden bg-slate-50/50 dark:bg-slate-950/50 border-b border-slate-200/50 dark:border-slate-800/50 text-center md:text-left">
+        <section className="hero-section relative min-h-[auto] md:min-h-[50vh] flex items-center pt-20 md:pt-24 pb-8 md:pb-12 overflow-hidden bg-slate-50/50 dark:bg-slate-950/50 border-b border-slate-200/50 dark:border-slate-800/50 text-center md:text-left">
             <ContactFormModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
             {/* Optimized Dotted Background Pattern */}
             <div className="absolute inset-0 z-0 bg-[radial-gradient(#8080802e_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -41,7 +41,7 @@ export default function Hero() {
                 className="hidden md:block absolute -bottom-24 -right-12 md:-bottom-40 md:-right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-indigo-500/25 to-purple-500/20 rounded-full blur-[80px] md:blur-[100px] z-0 opacity-60 md:opacity-100"
             />
 
-            <div className="container mx-auto relative z-10 max-w-7xl">
+            <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
                 <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-3 md:gap-8 items-center">
                     {/* Left Column - Content */}
                     <motion.div
@@ -50,12 +50,12 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="flex flex-col items-center md:items-start space-y-4 md:space-y-3 w-full"
                     >
-                        <h1 className="text-[26px] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
-                            Revanth Kumar — <span className="text-primary">Full Stack Developer & AI Engineer</span>
+                        <h1 className="text-[23px] sm:text-[27px] md:text-[35px] lg:text-[42px] font-medium text-foreground leading-tight tracking-tight">
+                            Revanth Kumar — <span className="text-primary font-semibold">Full Stack Developer & AI Engineer</span>
                         </h1>
 
                         <div className="space-y-2 flex flex-col items-center md:items-start">
-                            <h2 className="text-[15px] sm:text-[17px] md:text-xl lg:text-2xl font-bold tracking-tight text-slate-700 dark:text-slate-300">
+                            <h2 className="text-[14px] sm:text-[16px] md:text-lg lg:text-xl font-medium tracking-tight text-slate-700 dark:text-slate-300">
                                 React.js | Next.js | Node.js | NestJS | AI Systems
                             </h2>
                             <p className="text-[13px] md:text-base text-muted-foreground max-w-sm md:max-w-md leading-relaxed">
@@ -85,26 +85,26 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="relative h-[240px] md:h-[400px] w-full flex items-center justify-center -mt-6 md:mt-0"
+                        className="relative h-[270px] md:h-[400px] w-full flex items-center justify-center -mt-6 md:mt-0"
                     >
                         <div className="relative flex items-center justify-center">
                             {/* Ring 2 */}
                             <motion.div
                                 animate={{ scale: [1, 1.03, 1] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                className="absolute w-[200px] h-[200px] md:w-[360px] md:h-[360px] rounded-full bg-primary/10 dark:bg-primary/10 border border-primary/10"
+                                className="absolute w-[240px] h-[240px] md:w-[360px] md:h-[360px] rounded-full bg-primary/10 dark:bg-primary/10 border border-primary/10"
                             />
                             {/* Ring 1 (Innermost Background) */}
-                            <div className="absolute w-[166px] h-[166px] md:w-[300px] md:h-[300px] rounded-full bg-primary/15 dark:bg-primary/20 border border-primary/10" />
+                            <div className="absolute w-[210px] h-[210px] md:w-[300px] md:h-[300px] rounded-full bg-primary/15 dark:bg-primary/20 border border-primary/10" />
 
                             {/* Profile Image Container */}
-                            <div className="relative w-[148px] h-[148px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
+                            <div className="relative w-[180px] h-[180px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-[4px] md:border-[6px] border-white dark:border-slate-950 shadow-2xl z-10">
                                 <div className="relative w-full h-full bg-slate-100 dark:bg-slate-800">
                                     <Image
                                         src="/revanth-kumar-full-stack-mern-developer-ai-engineer.jpg"
                                         alt="Revanth Kumar - Full Stack MERN Stack Developer and AI Engineer Portfolio Profile Picture"
                                         fill
-                                        sizes="(max-width: 768px) 148px, 280px"
+                                        sizes="(max-width: 768px) 180px, 280px"
                                         priority
                                         className="object-cover"
                                     />

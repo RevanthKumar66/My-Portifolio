@@ -5,7 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ToastProvider } from "@/components/ui/Toast";
 import { profile } from "@/data/profile";
-import { personJsonLd, websiteJsonLd } from "@/lib/structured-data";
+import { siteDescription, siteTitle } from "@/lib/metadata";
+import { siteJsonLd } from "@/lib/structured-data";
 import { themeColors, themeInitScript } from "@/lib/theme";
 
 const inter = Inter({
@@ -27,41 +28,26 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(profile.url),
   title: {
-    default: `${profile.name} | ${profile.title}`,
+    default: siteTitle,
     template: `%s | ${profile.name}`,
   },
-  description:
-    "Software Engineer in Hyderabad, India, focused on full-stack development, backend engineering, enterprise applications, and scalable web experiences.",
+  description: siteDescription,
   applicationName: profile.name,
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: profile.url,
-  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: profile.url,
     siteName: profile.name,
-    title: `${profile.name} | ${profile.title}`,
-    description:
-      "Software Engineer in Hyderabad, India, focused on full-stack development, backend engineering, enterprise applications, and scalable web experiences.",
+    title: siteTitle,
+    description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | ${profile.title}`,
-    description:
-      "Software Engineer in Hyderabad, India, focused on full-stack development, backend engineering, and enterprise applications.",
+    title: siteTitle,
+    description: siteDescription,
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-  },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -97,11 +83,7 @@ export default function RootLayout({
         </ToastProvider>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
       </body>
     </html>

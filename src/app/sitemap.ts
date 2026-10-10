@@ -4,20 +4,29 @@ import { getProjects } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-10-10");
-  const staticRoutes = ["", "/projects", "/about", "/contact"];
+  const staticRoutes = [
+    { path: "", images: [profile.portrait.src] },
+    { path: "/projects", images: [] },
+    { path: "/about", images: [profile.aboutPortrait.src] },
+    { path: "/contact", images: [] },
+  ];
 
   return [
-    ...staticRoutes.map((path) => ({
+    ...staticRoutes.map(({ path, images }) => ({
       url: `${profile.url}${path}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: path === "" ? 1 : 0.8,
+      ...(images.length > 0 ? { images: images.map((src) => `${profile.url}${src}`) } : {}),
     })),
     ...getProjects().map((project) => ({
       url: `${profile.url}/projects/${project.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+      ...(project.visual.type !== "illustration"
+        ? { images: [`${profile.url}${project.visual.image.src}`] }
+        : {}),
     })),
   ];
 }

@@ -9,7 +9,7 @@ import { BulletList } from "@/features/projects/ProjectDetails";
 import { ProjectTextLinks } from "@/features/projects/ProjectLinks";
 import { ProjectMedia } from "@/features/projects/ProjectMedia";
 import { getAdjacentProjects, projectKindLabels } from "@/lib/projects";
-import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { projectJsonLd } from "@/lib/structured-data";
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -29,7 +29,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
     <article>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(project)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(project)) }}
       />
       <header className="bg-hero pb-10 pt-8 md:pb-14 md:pt-12">
         <Container>
@@ -92,7 +92,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="shadow-[var(--shadow-raised)]"
               />
-              {project.visual.type === "screenshot" ? (
+              {project.visual.type !== "illustration" ? (
                 <p className="mt-2.5 text-[12.5px] text-text-muted">{project.visual.caption}</p>
               ) : null}
             </div>
@@ -115,9 +115,11 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
             <p>{project.architecture}</p>
           </Block>
 
-          <Block title="Technical decisions">
-            <BulletList items={project.decisions} />
-          </Block>
+          {project.decisions?.length ? (
+            <Block title="Technical decisions">
+              <BulletList items={project.decisions} />
+            </Block>
+          ) : null}
 
           {project.note ? (
             <p className="border-t border-border pt-6 text-[13px] leading-relaxed text-text-muted">{project.note}</p>

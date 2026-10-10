@@ -26,7 +26,7 @@ export function getProjectGroups() {
     {
       id: "personal",
       title: "Personal projects",
-      description: "Built on my own, with public code.",
+      description: "Built on my own, live or open source.",
       projects: projects.filter((project) => project.kind === "personal"),
     },
   ];

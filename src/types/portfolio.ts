@@ -18,6 +18,7 @@ export type Profile = {
   resumePath: string;
   resumeFilename: string;
   portrait: ImageAsset;
+  aboutPortrait: ImageAsset;
   eyebrow: string;
   headline: string;
   headlineAccent: string;
@@ -50,6 +51,7 @@ export type ProjectKind = "employment" | "company" | "personal";
 
 export type ProjectVisual =
   | { type: "screenshot"; image: ImageAsset; caption: string }
+  | { type: "mockup"; image: ImageAsset; caption: string }
   | { type: "illustration"; variant: "booking-roles" | "corporate-site" | "ml-pipeline" };
 
 export type Project = {
@@ -67,7 +69,7 @@ export type Project = {
   contribution: string[];
   technologies: string[];
   features: string[];
-  decisions: string[];
+  decisions?: string[];
   architecture: string;
   featured: boolean;
   visual: ProjectVisual;

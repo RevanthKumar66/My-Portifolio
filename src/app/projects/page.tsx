@@ -7,10 +7,11 @@ import { pageMetadata } from "@/lib/metadata";
 import { getProjectGroups } from "@/lib/projects";
 
 export const metadata = pageMetadata({
-  title: "Projects",
+  title: "Projects by Revanth Kumar | Full-Stack Developer",
   description:
-    "Projects by Revanth Kumar: a driver-booking platform, company websites, a Gemini-based AI assistant, and a pneumonia detection study. Verified links only.",
+    "Software projects by Revanth Kumar: AI web apps, Next.js websites, a driver-booking platform, and machine learning work, each with a case study and live or source links.",
   path: "/projects",
+  absoluteTitle: true,
 });
 
 export default function ProjectsPage() {

@@ -15,18 +15,24 @@ export const profile: Profile = {
   resumePath: "/resume/RevanthkumarResume.pdf",
   resumeFilename: "Revanth-Kumar-Resume.pdf",
   portrait: {
-    src: "/images/revanth-kumar-portrait.webp",
-    alt: "Portrait of Revanth Kumar outdoors, smiling, in a light checked shirt.",
-    width: 880,
-    height: 1100,
+    src: "/images/revanth-kumar.jpg",
+    alt: "Revanth Kumar, smiling, in a navy shirt in front of framed tech prints.",
+    width: 1000,
+    height: 1000,
+  },
+  aboutPortrait: {
+    src: "/images/revanth-kumar-about.jpg",
+    alt: "Revanth Kumar in a maroon shirt, facing the camera in a bright office.",
+    width: 1145,
+    height: 1374,
   },
   eyebrow: "Software Engineer · Hyderabad, India",
   headline: "I build software that solves",
   headlineAccent: "real problems.",
   summary: "I work across frontend, backend, APIs, and databases.",
-  currentRole: "Software Development Intern at The Fishin Company",
+  currentRole: "Software Development Intern at Fishin’ India Private Limited",
   intro:
-    "Software engineer in Hyderabad. Intern at The Fishin Company, previously a developer at Deepvibe IT Solutions.",
+    "Software engineer in Hyderabad. Intern at Fishin’ India Private Limited, previously a developer at Deepvibe IT Solutions.",
 };
 
 export const achievement: Achievement = {

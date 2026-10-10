@@ -17,16 +17,23 @@ import { SkillGroupGrid } from "@/components/sections/SkillsOverview";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "About",
+  title: "About Revanth Kumar | Software Engineer in Hyderabad",
   description:
-    "About Revanth Kumar, a software engineer in Hyderabad: experience, education, skills, and certifications.",
+    "About Revanth Kumar, a full-stack software engineer in Hyderabad: experience at Fishin’ India Private Limited and Deepvibe IT Solutions, education, skills, and certifications.",
   path: "/about",
+  absoluteTitle: true,
 });
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader eyebrow={profile.eyebrow} title="About" accent="me." description={profile.intro}>
+      <PageHeader
+        eyebrow={profile.eyebrow}
+        title="About"
+        accent="me."
+        description={profile.intro}
+        portrait={profile.aboutPortrait}
+      >
         <div className="flex flex-wrap items-center gap-2">
           <Button href={profile.resumePath} download={profile.resumeFilename}>
             <Download className="size-4" aria-hidden="true" />

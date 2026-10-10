@@ -1,10 +1,20 @@
 import { ImageResponse } from "next/og";
-import { SocialCard } from "@/lib/social-card";
+import { SocialCard, portraitDataUrl, socialImageSize } from "@/lib/social-card";
 
-export const alt = "Revanth Kumar, Software Engineer in Hyderabad";
-export const size = { width: 1200, height: 630 };
+export const alt = "Revanth Kumar, full-stack software engineer in Hyderabad";
+export const size = socialImageSize;
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
-  return new ImageResponse(<SocialCard />, { ...size });
+export default async function OpenGraphImage() {
+  return new ImageResponse(
+    (
+      <SocialCard
+        eyebrow="Software Engineer · Hyderabad"
+        title="Revanth Kumar"
+        subtitle="Full-stack development with React, Next.js, TypeScript, and Node.js"
+        portrait={await portraitDataUrl()}
+      />
+    ),
+    { ...size },
+  );
 }

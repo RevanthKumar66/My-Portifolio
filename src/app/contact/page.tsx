@@ -11,10 +11,11 @@ import { whatsappLabel } from "@/components/ui/WhatsAppLink";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Contact",
+  title: "Contact Revanth Kumar | Software Engineer in Hyderabad",
   description:
-    "Contact Revanth Kumar, a software engineer in Hyderabad, by email, phone, WhatsApp, LinkedIn, or GitHub.",
+    "Contact Revanth Kumar, a full-stack software engineer in Hyderabad, by email, phone, WhatsApp, LinkedIn, or GitHub.",
   path: "/contact",
+  absoluteTitle: true,
 });
 
 const channels = [

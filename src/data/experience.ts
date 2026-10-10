@@ -3,12 +3,12 @@ import type { Experience } from "@/types/portfolio";
 export const experiences: Experience[] = [
   {
     id: "fishin",
-    organization: "The Fishin Company",
+    organization: "Fishin’ India Private Limited",
     title: "Software Development Intern",
     start: "July 2026",
     end: "Present",
     current: true,
-    monogram: "FC",
+    monogram: "FI",
     logo: {
       src: "/logos/fishin.png",
       alt: "Fishin logo",

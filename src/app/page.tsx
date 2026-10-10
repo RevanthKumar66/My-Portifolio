@@ -4,12 +4,11 @@ import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Hero } from "@/components/sections/Hero";
 import { SkillsOverview } from "@/components/sections/SkillsOverview";
-import { pageMetadata } from "@/lib/metadata";
+import { pageMetadata, siteDescription, siteTitle } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Revanth Kumar | Software Engineer",
-  description:
-    "Software Engineer in Hyderabad, India, focused on full-stack development, backend engineering, enterprise applications, and scalable web experiences.",
+  title: siteTitle,
+  description: siteDescription,
   path: "/",
   absoluteTitle: true,
 });

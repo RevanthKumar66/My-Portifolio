@@ -1,18 +1,44 @@
-import ProjectsHero from "@/components/projects/ProjectsHero";
-import ProjectsOverview from "@/components/projects/ProjectsOverview";
-import ProjectList from "@/components/projects/ProjectList";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProjectGrid } from "@/features/projects/ProjectGrid";
+import { pageMetadata } from "@/lib/metadata";
+import { getProjectGroups } from "@/lib/projects";
 
-export const metadata = {
-    title: "Portfolio | Revanth Kumar",
-    description: "Explore my technical portfolio featuring full-stack development, AI solutions, and data-driven projects.",
-};
+export const metadata = pageMetadata({
+  title: "Projects",
+  description:
+    "Projects by Revanth Kumar: a driver-booking platform, company websites, a Gemini-based AI assistant, and a pneumonia detection study. Verified links only.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <ProjectsHero />
-            <ProjectsOverview />
-            <ProjectList />
-        </div>
-    );
+  const groups = getProjectGroups();
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="Work"
+        title="My"
+        accent="projects."
+        description="Professional and personal work, each with a case study."
+      />
+      {groups.map((group, index) => (
+        <Section
+          key={group.id}
+          id={group.id}
+          labelledBy={`${group.id}-heading`}
+          tone={index === 0 ? "showcase" : "default"}
+        >
+          <Container>
+            <SectionHeading id={`${group.id}-heading`} title={group.title} description={group.description} />
+            <div className="mt-6 md:mt-8">
+              <ProjectGrid projects={group.projects} />
+            </div>
+          </Container>
+        </Section>
+      ))}
+    </>
+  );
 }

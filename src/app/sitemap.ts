@@ -1,54 +1,23 @@
-import { MetadataRoute } from 'next';
-import { blogs } from '@/data/blogs';
+import type { MetadataRoute } from "next";
+import { profile } from "@/data/profile";
+import { getProjects } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://revanthkumar.dev';
-    const currentDate = new Date();
+  const lastModified = new Date("2026-10-10");
+  const staticRoutes = ["", "/projects", "/about", "/contact"];
 
-    const blogUrls = blogs.map((post) => ({
-        url: `${baseUrl}/blogs/${post.slug}`,
-        lastModified: currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }));
-
-    return [
-        {
-            url: baseUrl,
-            lastModified: currentDate,
-            changeFrequency: 'weekly',
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/about`,
-            lastModified: currentDate,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/projects`,
-            lastModified: currentDate,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/services`,
-            lastModified: currentDate,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/blogs`,
-            lastModified: currentDate,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: currentDate,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        ...blogUrls,
-    ];
+  return [
+    ...staticRoutes.map((path) => ({
+      url: `${profile.url}${path}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: path === "" ? 1 : 0.8,
+    })),
+    ...getProjects().map((project) => ({
+      url: `${profile.url}/projects/${project.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 }

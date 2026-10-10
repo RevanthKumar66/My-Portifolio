@@ -1,29 +1,28 @@
-import Hero from "@/components/Hero";
-import TechStackSnapshot from "@/components/TechStackSnapshot";
-import AboutPreview from "@/components/AboutPreview";
-import ExperienceSnapshot from "@/components/ExperienceSnapshot";
-import FeaturedProjects from "@/components/FeaturedProjects";
-import ServicesPreview from "@/components/ServicesPreview";
-import BlogsPreview from "@/components/BlogsPreview";
-import Values from "@/components/Values";
-import { Metadata } from "next";
+import { AboutPreview } from "@/components/sections/AboutPreview";
+import { ContactCTA } from "@/components/sections/ContactCTA";
+import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
+import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { Hero } from "@/components/sections/Hero";
+import { SkillsOverview } from "@/components/sections/SkillsOverview";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Revanth Kumar | Full Stack Developer & AI Engineer",
-    description: "Welcome to the portfolio of Revanth Kumar. I am a Full Stack MERN Developer and AI Engineer specializing in React, Node.js, Python, and Machine Learning.",
-};
+export const metadata = pageMetadata({
+  title: "Revanth Kumar | Software Engineer",
+  description:
+    "Software Engineer in Hyderabad, India, focused on full-stack development, backend engineering, enterprise applications, and scalable web experiences.",
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default function Home() {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Hero />
-            <TechStackSnapshot />
-            <AboutPreview />
-            <ExperienceSnapshot />
-            <FeaturedProjects />
-            <ServicesPreview />
-            <BlogsPreview />
-            <Values />
-        </div>
-    );
+  return (
+    <>
+      <Hero />
+      <FeaturedProjects />
+      <ExperienceTimeline />
+      <SkillsOverview />
+      <AboutPreview />
+      <ContactCTA />
+    </>
+  );
 }

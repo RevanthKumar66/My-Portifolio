@@ -1,45 +1,35 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectGrid } from "@/features/projects/ProjectGrid";
 import { pageMetadata } from "@/lib/metadata";
-import { getProjectGroups } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 
 export const metadata = pageMetadata({
   title: "Projects by Revanth Kumar | Full-Stack Developer",
   description:
-    "Software projects by Revanth Kumar: AI web apps, Next.js websites, a driver-booking platform, and machine learning work, each with a case study and live or source links.",
+    "Personal projects by Revanth Kumar: Next.js websites and AI web apps, including CRO Engine and Mentor OS AI, each with a case study and a live site.",
   path: "/projects",
   absoluteTitle: true,
 });
 
 export default function ProjectsPage() {
-  const groups = getProjectGroups();
-
   return (
     <>
       <PageHeader
         eyebrow="Work"
-        title="My"
+        title="Personal"
         accent="projects."
-        description="Professional and personal work, each with a case study."
+        description="Live sites I built and deployed, each with a case study."
       />
-      {groups.map((group, index) => (
-        <Section
-          key={group.id}
-          id={group.id}
-          labelledBy={`${group.id}-heading`}
-          tone={index === 0 ? "showcase" : "default"}
-        >
-          <Container>
-            <SectionHeading id={`${group.id}-heading`} title={group.title} description={group.description} />
-            <div className="mt-6 md:mt-8">
-              <ProjectGrid projects={group.projects} />
-            </div>
-          </Container>
-        </Section>
-      ))}
+      <Section id="personal" labelledBy="personal-heading" tone="showcase">
+        <Container>
+          <h2 id="personal-heading" className="sr-only">
+            Personal projects
+          </h2>
+          <ProjectGrid projects={getProjects()} />
+        </Container>
+      </Section>
     </>
   );
 }

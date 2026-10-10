@@ -20,6 +20,18 @@ export const profile: Profile = {
     width: 1000,
     height: 1000,
   },
+  avatar: {
+    src: "/images/revanth-kumar-avatar.jpg",
+    alt: "Revanth Kumar, smiling, in a navy shirt.",
+    width: 256,
+    height: 256,
+  },
+  aboutAvatar: {
+    src: "/images/revanth-kumar-about-avatar.jpg",
+    alt: "Revanth Kumar in a maroon shirt.",
+    width: 256,
+    height: 256,
+  },
   aboutPortrait: {
     src: "/images/revanth-kumar-about.jpg",
     alt: "Revanth Kumar in a maroon shirt, facing the camera in a bright office.",

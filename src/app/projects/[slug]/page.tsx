@@ -2,13 +2,6 @@ import { notFound } from "next/navigation";
 import { ProjectCaseStudy } from "@/features/projects/ProjectCaseStudy";
 import { pageMetadata } from "@/lib/metadata";
 import { getProject, getProjects } from "@/lib/projects";
-import type { Project } from "@/types/portfolio";
-
-function projectContext(project: Project) {
-  if (project.kind === "personal") return "A personal project by Revanth Kumar";
-  if (project.kind === "employment") return "Case study by Revanth Kumar";
-  return `Built by Revanth Kumar for ${project.organization}`;
-}
 
 export function generateStaticParams() {
   return getProjects().map((project) => ({ slug: project.slug }));
@@ -30,7 +23,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     title: `${project.name} Case Study`,
-    description: `${project.shortDescription} ${projectContext(project)}, with role, features, and implementation details.`,
+    description: `${project.shortDescription} A personal project by Revanth Kumar, with features, implementation details, and a link to the live site.`,
     path: `/projects/${project.slug}`,
     hasOwnSocialImage: true,
   });

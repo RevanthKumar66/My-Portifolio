@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { TechnologyList } from "@/components/ui/TechnologyPill";
 import { ProjectMedia } from "@/features/projects/ProjectMedia";
 import { ProjectTextLinks } from "@/features/projects/ProjectLinks";
-import { projectKindLabels } from "@/lib/projects";
+import { projectLabel } from "@/lib/projects";
 
 function DetailBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -36,17 +36,13 @@ export function ProjectDetails({ project }: { project: Project }) {
 
       <div>
         <div className="flex flex-wrap items-center gap-2">
-          <Badge tone="accent">{projectKindLabels[project.kind]}</Badge>
-          {project.kind !== "personal" ? (
-            <span className="text-[12px] text-text-muted">{project.organization}</span>
-          ) : null}
-          {project.period ? <span className="text-[12px] text-text-muted">· {project.period}</span> : null}
+          <Badge tone="accent">{projectLabel}</Badge>
+          <span className="text-[12px] text-text-muted">{project.category}</span>
         </div>
         <p className="mt-3 text-pretty text-[14.5px] leading-relaxed text-text-secondary">{project.description}</p>
       </div>
 
       <DetailBlock title="My contribution">
-        <p className="mb-2.5 text-[13px] text-text-muted">{project.role}</p>
         <BulletList items={project.contribution} />
       </DetailBlock>
 

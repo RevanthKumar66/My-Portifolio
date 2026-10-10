@@ -25,12 +25,12 @@ export function HeroAvatar() {
   return (
     <span className="relative inline-flex size-12 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)]">
       <Image
-        src={profile.portrait.src}
-        alt={profile.portrait.alt}
+        src={profile.avatar.src}
+        alt={profile.avatar.alt}
         fill
         priority
         sizes="48px"
-        className="origin-[53%_40%] scale-[1.35] object-cover"
+        className="object-cover"
       />
     </span>
   );

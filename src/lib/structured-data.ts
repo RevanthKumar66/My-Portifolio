@@ -64,7 +64,6 @@ export const siteJsonLd = {
 
 export function projectJsonLd(project: Project) {
   const url = `${profile.url}/projects/${project.slug}`;
-  const image = project.visual.type === "illustration" ? undefined : `${profile.url}${project.visual.image.src}`;
   const links = [project.liveUrl, project.repositoryUrl].filter(Boolean);
 
   return {
@@ -85,15 +84,10 @@ export function projectJsonLd(project: Project) {
         description: project.description,
         url,
         genre: project.category,
-        ...(image ? { image } : {}),
+        image: `${profile.url}${project.image.src}`,
         ...(project.technologies.length > 0 ? { keywords: project.technologies.join(", ") } : {}),
-        ...(links.length > 0 ? { sameAs: links } : {}),
-        ...(project.kind === "personal"
-          ? { author: { "@id": personId } }
-          : {
-              contributor: { "@id": personId },
-              sourceOrganization: { "@type": "Organization", name: project.organization },
-            }),
+        sameAs: links,
+        author: { "@id": personId },
         isPartOf: { "@id": websiteId },
       },
     ],

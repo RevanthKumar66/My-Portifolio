@@ -18,7 +18,9 @@ export type Profile = {
   resumePath: string;
   resumeFilename: string;
   portrait: ImageAsset;
+  avatar: ImageAsset;
   aboutPortrait: ImageAsset;
+  aboutAvatar: ImageAsset;
   eyebrow: string;
   headline: string;
   headlineAccent: string;
@@ -47,33 +49,21 @@ export type Experience = {
   logo?: ImageAsset;
 };
 
-export type ProjectKind = "employment" | "company" | "personal";
-
-export type ProjectVisual =
-  | { type: "screenshot"; image: ImageAsset; caption: string }
-  | { type: "mockup"; image: ImageAsset; caption: string }
-  | { type: "illustration"; variant: "booking-roles" | "corporate-site" | "ml-pipeline" };
-
 export type Project = {
   slug: string;
   name: string;
   shortDescription: string;
   description: string;
   category: string;
-  kind: ProjectKind;
-  role: string;
-  organization: string;
-  period?: string;
   problem: string;
   users: string;
   contribution: string[];
   technologies: string[];
   features: string[];
-  decisions?: string[];
   architecture: string;
-  featured: boolean;
-  visual: ProjectVisual;
-  liveUrl?: string;
+  /** Device mockup of the live site, stored locally. */
+  image: ImageAsset;
+  liveUrl: string;
   repositoryUrl?: string;
   note?: string;
 };

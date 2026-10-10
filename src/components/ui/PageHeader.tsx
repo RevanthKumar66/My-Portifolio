@@ -10,6 +10,7 @@ export function PageHeader({
   accent,
   description,
   portrait,
+  avatar,
   children,
 }: {
   eyebrow: string;
@@ -17,6 +18,7 @@ export function PageHeader({
   accent?: string;
   description: string;
   portrait?: ImageAsset;
+  avatar?: ImageAsset;
   children?: React.ReactNode;
 }) {
   return (
@@ -35,15 +37,9 @@ export function PageHeader({
             <h1 className="rise max-w-[20ch] text-balance text-[clamp(1.75rem,1.4rem+1.6vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.035em]">
               <TwoToneTitle title={title} accent={accent} />
             </h1>
-            {portrait ? (
+            {avatar ? (
               <span className="enter relative inline-flex size-14 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
-                <Image
-                  src={portrait.src}
-                  alt=""
-                  fill
-                  sizes="56px"
-                  className="origin-[50%_32%] scale-[1.5] object-cover"
-                />
+                <Image src={avatar.src} alt="" fill sizes="56px" className="object-cover" />
               </span>
             ) : null}
           </div>

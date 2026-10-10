@@ -8,7 +8,7 @@ import { TechnologyList } from "@/components/ui/TechnologyPill";
 import { BulletList } from "@/features/projects/ProjectDetails";
 import { ProjectTextLinks } from "@/features/projects/ProjectLinks";
 import { ProjectMedia } from "@/features/projects/ProjectMedia";
-import { getAdjacentProjects, projectKindLabels } from "@/lib/projects";
+import { getAdjacentProjects, projectLabel } from "@/lib/projects";
 import { projectJsonLd } from "@/lib/structured-data";
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
@@ -50,7 +50,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
           <div className="mt-4 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12">
             <div>
               <div className="enter flex flex-wrap items-center gap-2">
-                <Badge tone="accent">{projectKindLabels[project.kind]}</Badge>
+                <Badge tone="accent">{projectLabel}</Badge>
                 <span className="text-[12px] text-text-muted">{project.category}</span>
               </div>
               <h1 className="rise mt-3 text-balance text-[clamp(1.625rem,1.25rem+1.8vw,3rem)] font-semibold leading-[1.06] tracking-[-0.04em]">
@@ -62,26 +62,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
               >
                 {project.description}
               </p>
-              <dl
-                className="enter mt-6 grid gap-4 border-t border-border pt-5 text-[13px] sm:grid-cols-3"
-                style={{ "--enter-delay": "160ms" } as React.CSSProperties}
-              >
-                <div>
-                  <dt className="text-text-muted">Role</dt>
-                  <dd className="mt-1 font-medium text-text-primary">{project.role}</dd>
-                </div>
-                <div>
-                  <dt className="text-text-muted">Context</dt>
-                  <dd className="mt-1 font-medium text-text-primary">{project.organization}</dd>
-                </div>
-                {project.period ? (
-                  <div>
-                    <dt className="text-text-muted">Period</dt>
-                    <dd className="mt-1 font-medium text-text-primary">{project.period}</dd>
-                  </div>
-                ) : null}
-              </dl>
-              <div className="enter mt-6" style={{ "--enter-delay": "220ms" } as React.CSSProperties}>
+              <div className="enter mt-6" style={{ "--enter-delay": "160ms" } as React.CSSProperties}>
                 <ProjectTextLinks project={project} />
               </div>
             </div>
@@ -92,9 +73,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="shadow-[var(--shadow-raised)]"
               />
-              {project.visual.type !== "illustration" ? (
-                <p className="mt-2.5 text-[12.5px] text-text-muted">{project.visual.caption}</p>
-              ) : null}
+              <p className="mt-2.5 text-[12.5px] text-text-muted">Device mockup of the live site.</p>
             </div>
           </div>
         </Container>
@@ -114,12 +93,6 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
           <Block title="Implementation">
             <p>{project.architecture}</p>
           </Block>
-
-          {project.decisions?.length ? (
-            <Block title="Technical decisions">
-              <BulletList items={project.decisions} />
-            </Block>
-          ) : null}
 
           {project.note ? (
             <p className="border-t border-border pt-6 text-[13px] leading-relaxed text-text-muted">{project.note}</p>

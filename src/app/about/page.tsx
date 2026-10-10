@@ -33,6 +33,7 @@ export default function AboutPage() {
         accent="me."
         description={profile.intro}
         portrait={profile.aboutPortrait}
+        avatar={profile.aboutAvatar}
       >
         <div className="flex flex-wrap items-center gap-2">
           <Button href={profile.resumePath} download={profile.resumeFilename}>

@@ -1,7 +1,7 @@
-import { profile } from "@/data/profile";
+import { profile, socialProfiles } from "@/data/profile";
 import { highestEducation } from "@/data/education";
 import { experiences } from "@/data/experience";
-import { siteDescription } from "@/lib/metadata";
+import { absoluteUrl, siteDescription } from "@/lib/metadata";
 import type { Project } from "@/types/portfolio";
 
 const personId = `${profile.url}/#person`;
@@ -16,7 +16,7 @@ export const siteJsonLd = {
       "@id": personId,
       name: profile.name,
       alternateName: profile.fullName,
-      jobTitle: profile.title,
+      jobTitle: ["Software Engineer", "Software Developer", "Full-Stack Engineer"],
       description: siteDescription,
       url: profile.url,
       image: `${profile.url}${profile.portrait.src}`,
@@ -36,7 +36,9 @@ export const siteJsonLd = {
         name: highestEducation.institution,
       },
       knowsAbout: [
+        "Software engineering",
         "Full-stack web development",
+        "Web application development",
         "React",
         "Next.js",
         "TypeScript",
@@ -46,7 +48,7 @@ export const siteJsonLd = {
         "PostgreSQL",
         "REST APIs",
       ],
-      sameAs: [profile.linkedin, profile.github],
+      sameAs: socialProfiles.map((social) => social.canonicalHref ?? social.href),
     },
     {
       "@type": "WebSite",
@@ -62,6 +64,41 @@ export const siteJsonLd = {
   ],
 };
 
+function breadcrumbList(trail: { name: string; path: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Home", path: "/" }, ...trail].map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(name: string, path: string) {
+  return {
+    "@context": "https://schema.org",
+    ...breadcrumbList([{ name, path }]),
+  };
+}
+
+export const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbList([{ name: "About", path: "/about" }]),
+    {
+      "@type": "ProfilePage",
+      "@id": `${absoluteUrl("/about")}#profile`,
+      url: absoluteUrl("/about"),
+      name: `About ${profile.name}`,
+      inLanguage: "en-IN",
+      isPartOf: { "@id": websiteId },
+      mainEntity: { "@id": personId, "@type": "Person", name: profile.name },
+    },
+  ],
+};
+
 export function projectJsonLd(project: Project) {
   const url = `${profile.url}/projects/${project.slug}`;
   const links = [project.liveUrl, project.repositoryUrl].filter(Boolean);
@@ -69,14 +106,10 @@ export function projectJsonLd(project: Project) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: profile.url },
-          { "@type": "ListItem", position: 2, name: "Projects", item: `${profile.url}/projects` },
-          { "@type": "ListItem", position: 3, name: project.name, item: url },
-        ],
-      },
+      breadcrumbList([
+        { name: "Projects", path: "/projects" },
+        { name: project.name, path: `/projects/${project.slug}` },
+      ]),
       {
         "@type": "CreativeWork",
         "@id": `${url}#project`,

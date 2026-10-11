@@ -1,19 +1,21 @@
 import { ArrowUpRight, Download } from "lucide-react";
-import { profile } from "@/data/profile";
+import { profile, socialGroups, socialProfiles } from "@/data/profile";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { CopyUrlButton } from "@/components/ui/SocialLinks";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { whatsappLabel } from "@/components/ui/WhatsAppLink";
 import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
   title: "Contact Revanth Kumar | Software Engineer in Hyderabad",
   description:
-    "Contact Revanth Kumar, a full-stack software engineer in Hyderabad, by email, phone, WhatsApp, LinkedIn, or GitHub.",
+    "Contact Revanth Kumar, a software engineer and full-stack developer in Hyderabad, by email, phone, or WhatsApp, or find him on GitHub, LinkedIn, LeetCode, and HackerRank.",
   path: "/contact",
   absoluteTitle: true,
 });
@@ -21,13 +23,15 @@ export const metadata = pageMetadata({
 const channels = [
   { label: "Phone", value: profile.phone, href: profile.phoneHref, ariaLabel: undefined },
   { label: "WhatsApp", value: "Message me on WhatsApp", href: profile.whatsapp, ariaLabel: whatsappLabel },
-  { label: "LinkedIn", value: "linkedin.com/in/revanthkumar66", href: profile.linkedin, ariaLabel: undefined },
-  { label: "GitHub", value: "github.com/RevanthKumar66", href: profile.github, ariaLabel: undefined },
 ];
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd("Contact", "/contact")) }}
+      />
       <PageHeader
         eyebrow="Contact"
         title="Get in"
@@ -105,6 +109,49 @@ export default function ContactPage() {
                 Download Resume
               </Button>
             </div>
+          </Reveal>
+
+          <Reveal
+            delay={120}
+            className="grid grid-cols-1 rounded-[var(--radius-panel)] border border-border bg-surface p-1.5 shadow-[var(--shadow-card)] md:grid-cols-2 md:gap-1.5 lg:col-span-2"
+          >
+            {socialGroups.map((group) => (
+              <div key={group.id}>
+                <h3 className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-text-muted">
+                  {group.title} profiles
+                </h3>
+                <ul className="divide-y divide-border">
+                  {socialProfiles
+                    .filter((social) => social.group === group.id)
+                    .map((social) => (
+                      <li key={social.label} className="flex items-center gap-1 pr-1.5">
+                        <a
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex min-h-14 min-w-0 flex-1 items-center gap-3 rounded-[14px] px-3 py-2 transition-colors duration-150 hover:bg-surface-subtle"
+                        >
+                          <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-text-primary">
+                            <TechIcon name={social.label} className="size-4" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block text-[11.5px] text-text-muted">{social.label}</span>
+                            <span className="block truncate text-sm font-medium leading-snug text-text-primary">
+                              {social.handle}
+                            </span>
+                          </span>
+                          <ArrowUpRight
+                            className="size-3.5 shrink-0 text-text-muted transition-transform duration-200 group-hover:-translate-y-px group-hover:translate-x-px"
+                            aria-hidden="true"
+                          />
+                          <span className="sr-only">(opens in a new tab)</span>
+                        </a>
+                        <CopyUrlButton profile={social} />
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ))}
           </Reveal>
         </Container>
       </Section>

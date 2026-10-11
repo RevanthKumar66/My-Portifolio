@@ -4,27 +4,7 @@ import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { buttonClasses } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/Toast";
-
-async function writeToClipboard(text: string) {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    // The async Clipboard API can be blocked by permissions policy (embedded browsers, iframes).
-    const previousFocus = document.activeElement as HTMLElement | null;
-    const field = document.createElement("textarea");
-    field.value = text;
-    field.setAttribute("readonly", "");
-    field.style.position = "fixed";
-    field.style.opacity = "0";
-    document.body.appendChild(field);
-    field.select();
-    const copied = document.execCommand("copy");
-    field.remove();
-    previousFocus?.focus();
-    return copied;
-  }
-}
+import { writeToClipboard } from "@/lib/clipboard";
 
 export function CopyEmailButton({
   email,

@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ToastProvider } from "@/components/ui/Toast";
 import { profile } from "@/data/profile";
-import { siteDescription, siteTitle } from "@/lib/metadata";
+import { siteDescription, siteKeywords, siteTitle } from "@/lib/metadata";
 import { siteJsonLd } from "@/lib/structured-data";
 import { themeColors, themeInitScript } from "@/lib/theme";
 
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description: siteDescription,
+  keywords: siteKeywords,
   applicationName: profile.name,
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,

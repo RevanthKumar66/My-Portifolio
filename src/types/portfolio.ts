@@ -29,6 +29,16 @@ export type Profile = {
   intro: string;
 };
 
+export type SocialProfile = {
+  /** Brand name; also the key for its icon. */
+  label: string;
+  group: "developer" | "social";
+  href: string;
+  /** Profile URL without share-tracking parameters, for structured data. */
+  canonicalHref?: string;
+  handle: string;
+};
+
 export type ImageAsset = {
   src: string;
   alt: string;

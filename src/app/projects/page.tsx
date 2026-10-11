@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { ProjectGrid } from "@/features/projects/ProjectGrid";
 import { pageMetadata } from "@/lib/metadata";
 import { getProjects } from "@/lib/projects";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
   title: "Projects by Revanth Kumar | Full-Stack Developer",
@@ -16,6 +17,10 @@ export const metadata = pageMetadata({
 export default function ProjectsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd("Projects", "/projects")) }}
+      />
       <PageHeader
         eyebrow="Work"
         title="Personal"

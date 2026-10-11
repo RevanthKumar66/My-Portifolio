@@ -15,11 +15,12 @@ import { EducationTimeline } from "@/components/sections/EducationTimeline";
 import { ExperienceList } from "@/components/sections/ExperienceTimeline";
 import { SkillGroupGrid } from "@/components/sections/SkillsOverview";
 import { pageMetadata } from "@/lib/metadata";
+import { aboutJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
   title: "About Revanth Kumar | Software Engineer in Hyderabad",
   description:
-    "About Revanth Kumar, a full-stack software engineer in Hyderabad: experience at Fishin’ India Private Limited and Deepvibe IT Solutions, education, skills, and certifications.",
+    "About Revanth Kumar, a software engineer and full-stack developer in Hyderabad: experience at Fishin’ India Private Limited and Deepvibe IT Solutions, education, skills, and certifications.",
   path: "/about",
   absoluteTitle: true,
 });
@@ -27,6 +28,7 @@ export const metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <PageHeader
         eyebrow={profile.eyebrow}
         title="About"

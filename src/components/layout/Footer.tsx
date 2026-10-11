@@ -3,15 +3,11 @@ import { ArrowUp, Download } from "lucide-react";
 import { profile } from "@/data/profile";
 import { navigation } from "@/data/navigation";
 import { Container } from "@/components/ui/Container";
+import { SocialIconLinks } from "@/components/ui/SocialLinks";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { whatsappLabel } from "@/components/ui/WhatsAppLink";
 import { cn } from "@/lib/utils";
-
-const socials = [
-  { label: "LinkedIn", href: profile.linkedin },
-  { label: "GitHub", href: profile.github },
-];
 
 const linkClass =
   "inline-flex min-h-9 items-center gap-2 text-[13.5px] text-text-secondary transition-colors duration-150 hover:text-text-primary";
@@ -32,24 +28,9 @@ export function Footer() {
             <span className="sr-only">, home</span>
           </Link>
           <p className="mt-2 max-w-[34ch] text-[13.5px] leading-relaxed text-text-secondary">
-            {profile.title} in {profile.location}.
+            Software engineer and full-stack developer in {profile.location}.
           </p>
-          <ul className="mt-4 flex gap-1.5">
-            {socials.map(({ label, href }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${label} (opens in a new tab)`}
-                  title={label}
-                  className="relative inline-flex size-[34px] items-center justify-center rounded-full border border-border bg-surface text-text-secondary transition-[color,border-color] duration-150 ease-out before:absolute before:-inset-[5px] before:content-[''] hover:border-border-strong hover:text-text-primary"
-                >
-                  <TechIcon name={label} className="size-4" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialIconLinks className="mt-5 w-fit" />
         </div>
 
         <nav aria-label="Footer">

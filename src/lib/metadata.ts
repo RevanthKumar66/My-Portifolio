@@ -1,25 +1,18 @@
 import type { Metadata } from "next";
 import { profile } from "@/data/profile";
 
-export const siteTitle = `${profile.name} | Software Engineer & Full-Stack Developer`;
+export const siteTitle = `${profile.name} | Software Engineer`;
 
 export const siteDescription =
-  "Revanth Kumar is a software engineer and full-stack developer in Hyderabad, India. See his React, Next.js, TypeScript, and Node.js projects and experience.";
+  "Software engineer in Hyderabad building web apps with React, Next.js, TypeScript, and Node.js.";
 
 export const siteKeywords = [
   "Revanth Kumar",
-  "Revanth Kumar Software Engineer",
-  "Revanth Kumar Full-Stack Developer",
-  "Revanth Kumar Hyderabad",
-  "Revanth Kumar Bandi",
   "Software Engineer",
-  "Software Developer",
   "Full-Stack Developer",
-  "React Developer",
-  "Next.js Developer",
-  "TypeScript Developer",
-  "Node.js Developer",
-  "Software Engineering Portfolio",
+  "React",
+  "Next.js",
+  "Hyderabad",
 ];
 
 type PageMetadataInput = {

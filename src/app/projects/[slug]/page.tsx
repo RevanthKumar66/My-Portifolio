@@ -22,8 +22,8 @@ export async function generateMetadata({
   }
 
   return pageMetadata({
-    title: `${project.name} Case Study`,
-    description: `${project.shortDescription} A personal project by Revanth Kumar, with features, implementation details, and a link to the live site.`,
+    title: project.name,
+    description: `${project.shortDescription} Built by Revanth Kumar.`,
     path: `/projects/${project.slug}`,
     hasOwnSocialImage: true,
   });

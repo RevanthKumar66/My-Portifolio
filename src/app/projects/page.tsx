@@ -7,11 +7,9 @@ import { getProjects } from "@/lib/projects";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
-  title: "Projects by Revanth Kumar | Full-Stack Developer",
-  description:
-    "Personal projects by Revanth Kumar: Next.js websites and AI web apps, including CRO Engine and Mentor OS AI, each with a case study and a live site.",
+  title: "Projects",
+  description: "Selected web and AI projects by Revanth Kumar, with live demos and case studies.",
   path: "/projects",
-  absoluteTitle: true,
 });
 
 export default function ProjectsPage() {

@@ -25,7 +25,7 @@ export const siteJsonLd = {
         url: `${profile.url}${profile.portrait.src}`,
         contentUrl: `${profile.url}${profile.portrait.src}`,
         caption: profile.portrait.alt,
-        name: `${profile.name} — Software Engineer & Full-Stack Developer`,
+        name: `${profile.name} | Software Engineer`,
         width: profile.portrait.width,
         height: profile.portrait.height,
         encodingFormat: profile.portrait.src.endsWith(".png") ? "image/png" : "image/jpeg",

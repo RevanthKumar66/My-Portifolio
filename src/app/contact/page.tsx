@@ -13,11 +13,9 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
-  title: "Contact Revanth Kumar | Software Engineer in Hyderabad",
-  description:
-    "Contact Revanth Kumar, a software engineer and full-stack developer in Hyderabad, by email, phone, or WhatsApp, or find him on GitHub, LinkedIn, LeetCode, and HackerRank.",
+  title: "Contact",
+  description: "Email, phone, WhatsApp, and profiles for Revanth Kumar.",
   path: "/contact",
-  absoluteTitle: true,
 });
 
 const channels = [

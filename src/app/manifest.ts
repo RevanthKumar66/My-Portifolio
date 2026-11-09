@@ -4,9 +4,9 @@ import { themeColors } from "@/lib/theme";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${profile.name} | ${profile.title}`,
+    name: `${profile.name} | Software Engineer`,
     short_name: profile.name,
-    description: `${profile.title} in ${profile.location}.`,
+    description: `Software engineer in ${profile.location}.`,
     start_url: "/",
     display: "standalone",
     background_color: themeColors.light,

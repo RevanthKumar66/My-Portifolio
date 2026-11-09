@@ -18,11 +18,9 @@ import { pageMetadata } from "@/lib/metadata";
 import { aboutJsonLd } from "@/lib/structured-data";
 
 const aboutMeta = pageMetadata({
-  title: "About Revanth Kumar | Software Engineer in Hyderabad",
-  description:
-    "About Revanth Kumar, a software engineer and full-stack developer in Hyderabad: experience at Fishin’ India Private Limited and Deepvibe IT Solutions, education, skills, and certifications.",
+  title: "About",
+  description: "Experience, skills, and education of Revanth Kumar, software engineer in Hyderabad.",
   path: "/about",
-  absoluteTitle: true,
 });
 
 export const metadata = {

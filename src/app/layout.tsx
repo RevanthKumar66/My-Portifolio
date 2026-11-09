@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -9,11 +9,13 @@ import { siteDescription, siteKeywords, siteTitle } from "@/lib/metadata";
 import { siteJsonLd } from "@/lib/structured-data";
 import { themeColors, themeInitScript } from "@/lib/theme";
 
-const inter = Inter({
-  subsets: ["latin"],
+// Self-hosted to avoid intermittent Vercel Turbopack failures from next/font/google
+// when Google serves extensionless /l/font?kit= URLs (next.js#99114).
+const inter = localFont({
+  src: "./fonts/InterVariable.woff2",
   display: "swap",
   variable: "--font-inter",
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
 });
 
 export const viewport: Viewport = {

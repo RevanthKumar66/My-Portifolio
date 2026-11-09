@@ -33,13 +33,26 @@ export function PageHeader({
           <div className="enter">
             <Eyebrow>{eyebrow}</Eyebrow>
           </div>
-          <div className="mt-2.5 flex items-center justify-between gap-4">
+          <div className="mt-2.5 flex items-start justify-between gap-4 sm:items-center">
             <h1 className="rise max-w-[20ch] text-balance text-[clamp(1.75rem,1.4rem+1.6vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.035em]">
               <TwoToneTitle title={title} accent={accent} />
             </h1>
-            {avatar ? (
-              <span className="enter relative inline-flex size-14 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
-                <Image src={avatar.src} alt={avatar.alt} fill sizes="56px" className="object-cover" />
+            {portrait ? (
+              <figure className="enter relative w-[5.25rem] shrink-0 rounded-[14px] border border-border bg-surface p-1 shadow-[var(--shadow-card)] sm:w-[6rem] md:hidden">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[10px] bg-surface-subtle">
+                  <Image
+                    src={portrait.src}
+                    alt={portrait.alt}
+                    fill
+                    priority
+                    sizes="(min-width: 640px) 96px, 84px"
+                    className="object-cover object-[50%_18%]"
+                  />
+                </div>
+              </figure>
+            ) : avatar ? (
+              <span className="enter relative inline-flex size-16 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
+                <Image src={avatar.src} alt={avatar.alt} fill sizes="64px" className="object-cover" />
               </span>
             ) : null}
           </div>

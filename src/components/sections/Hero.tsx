@@ -10,13 +10,13 @@ export function Hero() {
     <section className="bg-hero overflow-hidden" aria-labelledby="hero-heading">
       <Container className="grid grid-cols-1 items-center gap-10 pb-10 pt-8 md:grid-cols-[minmax(0,1fr)_clamp(220px,27vw,300px)] md:gap-12 md:pb-14 md:pt-12 lg:gap-16 lg:pb-16 lg:pt-14">
         <div>
-          <div className="enter flex items-center gap-3">
+          <div className="enter flex items-center gap-3.5 sm:gap-4">
             <span className="md:hidden">
               <HeroAvatar />
             </span>
             <div className="min-w-0">
-              <p className="text-[15px] font-semibold tracking-[-0.01em] text-text-primary">{profile.name}</p>
-              <p className="mt-0.5 inline-flex items-center gap-1.5 text-[13px] text-text-secondary">
+              <p className="text-base font-semibold tracking-[-0.01em] text-text-primary sm:text-[17px]">{profile.name}</p>
+              <p className="mt-0.5 inline-flex items-center gap-1.5 text-[13px] leading-snug text-text-secondary">
                 <MapPin className="size-3.5 shrink-0 text-primary" aria-hidden="true" />
                 {profile.eyebrow}
               </p>

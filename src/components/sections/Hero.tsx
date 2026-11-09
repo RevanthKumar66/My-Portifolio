@@ -8,24 +8,26 @@ import { HeroAvatar, HeroPortrait } from "@/components/sections/HeroPortrait";
 export function Hero() {
   return (
     <section className="bg-hero overflow-hidden" aria-labelledby="hero-heading">
-      <Container className="grid grid-cols-1 items-center gap-10 pb-10 pt-8 md:grid-cols-[minmax(0,1fr)_clamp(220px,27vw,300px)] md:gap-12 md:pb-14 md:pt-12 lg:gap-16 lg:pb-16 lg:pt-14">
+      <Container className="grid grid-cols-1 items-center gap-10 pb-6 pt-7 md:grid-cols-[minmax(0,1fr)_clamp(220px,27vw,300px)] md:gap-12 md:pb-14 md:pt-12 lg:gap-16 lg:pb-16 lg:pt-14">
         <div>
           <div className="enter flex items-center gap-3.5 sm:gap-4">
             <span className="md:hidden">
               <HeroAvatar />
             </span>
             <div className="min-w-0">
-              <p className="text-base font-semibold tracking-[-0.01em] text-text-primary sm:text-[17px]">{profile.name}</p>
-              <p className="mt-0.5 inline-flex items-center gap-1.5 text-[13px] leading-snug text-text-secondary">
-                <MapPin className="size-3.5 shrink-0 text-primary" aria-hidden="true" />
-                {profile.eyebrow}
+              <p className="text-[15px] font-semibold leading-snug tracking-[-0.015em] text-text-primary sm:text-base">
+                {profile.name}
+              </p>
+              <p className="mt-1 inline-flex items-start gap-1.5 text-[12px] leading-snug text-text-secondary sm:text-[13px]">
+                <MapPin className="mt-0.5 size-3.5 shrink-0 text-primary" aria-hidden="true" />
+                <span>{profile.eyebrow}</span>
               </p>
             </div>
           </div>
 
           <h1
             id="hero-heading"
-            className="rise mt-5 max-w-[15ch] text-balance text-[clamp(2rem,1.5rem+2.4vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-text-primary md:mt-6"
+            className="rise mt-4 max-w-[15ch] text-balance text-[clamp(2rem,1.5rem+2.4vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-text-primary md:mt-6"
           >
             {profile.headline} <span className="accent-phrase whitespace-nowrap">{profile.headlineAccent}</span>
           </h1>

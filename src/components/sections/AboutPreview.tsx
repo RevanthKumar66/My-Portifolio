@@ -17,7 +17,7 @@ const facts = [
 
 export function AboutPreview() {
   return (
-    <Section id="about" labelledBy="about-heading">
+    <Section id="about" labelledBy="about-heading" className="pt-6 pb-10 md:py-14 lg:py-16">
       <Container className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-12">
         <Reveal>
           <Eyebrow>About</Eyebrow>

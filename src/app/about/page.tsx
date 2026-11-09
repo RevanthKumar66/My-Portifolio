@@ -68,10 +68,10 @@ export default function AboutPage() {
         </div>
       </PageHeader>
 
-      <Section id="experience" labelledBy="experience-about-heading" className="pt-2 md:pt-4 lg:pt-6">
+      <Section id="experience" labelledBy="experience-about-heading" className="pt-4 pb-10 md:py-14 lg:py-16">
         <Container>
           <SectionHeading id="experience-about-heading" title="Experience" />
-          <div className="mt-6 md:mt-8">
+          <div className="mt-5 md:mt-8">
             <ExperienceList />
           </div>
         </Container>

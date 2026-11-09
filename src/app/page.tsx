@@ -17,10 +17,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturedProjects />
+      <AboutPreview />
       <ExperienceTimeline />
       <SkillsOverview />
-      <AboutPreview />
+      <FeaturedProjects />
       <ContactCTA />
     </>
   );

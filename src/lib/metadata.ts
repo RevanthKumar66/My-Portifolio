@@ -9,7 +9,9 @@ export const siteDescription =
 export const siteKeywords = [
   "Revanth Kumar",
   "Revanth Kumar Software Engineer",
+  "Revanth Kumar Full-Stack Developer",
   "Revanth Kumar Hyderabad",
+  "Revanth Kumar Bandi",
   "Software Engineer",
   "Software Developer",
   "Full-Stack Developer",
@@ -43,6 +45,13 @@ export function pageMetadata({
   const url = absoluteUrl(path);
   const socialTitle = absoluteTitle ? title : `${title} | ${profile.name}`;
 
+  const portraitImage = {
+    url: profile.portrait.src,
+    width: profile.portrait.width,
+    height: profile.portrait.height,
+    alt: profile.portrait.alt,
+  };
+
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -56,13 +65,14 @@ export function pageMetadata({
       siteName: profile.name,
       locale: "en_IN",
       type: "website",
-      ...(hasOwnSocialImage ? {} : { images: ["/opengraph-image"] }),
+      // Portrait first so link previews and crawlers can use the named photo.
+      ...(hasOwnSocialImage ? {} : { images: [portraitImage, { url: "/opengraph-image", alt: socialTitle }] }),
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
       description,
-      ...(hasOwnSocialImage ? {} : { images: ["/twitter-image"] }),
+      ...(hasOwnSocialImage ? {} : { images: [profile.portrait.src, "/twitter-image"] }),
     },
   };
 }

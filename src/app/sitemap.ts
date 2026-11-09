@@ -3,7 +3,7 @@ import { profile } from "@/data/profile";
 import { getProjects } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-10-10");
+  const lastModified = new Date("2026-11-09");
   const staticRoutes = [
     { path: "", images: [profile.portrait.src] },
     { path: "/projects", images: [] },

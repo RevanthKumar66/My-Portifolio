@@ -39,7 +39,7 @@ export function PageHeader({
             </h1>
             {avatar ? (
               <span className="enter relative inline-flex size-14 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
-                <Image src={avatar.src} alt="" fill sizes="56px" className="object-cover" />
+                <Image src={avatar.src} alt={avatar.alt} fill sizes="56px" className="object-cover" />
               </span>
             ) : null}
           </div>

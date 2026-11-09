@@ -5,7 +5,9 @@ import { profile } from "@/data/profile";
 export const socialImageSize = { width: 1200, height: 630 };
 
 export async function portraitDataUrl() {
-  const file = await readFile(join(process.cwd(), "public", profile.portrait.src));
+  // Compact baseline JPEG so next/og can embed the portrait reliably.
+  const relativePath = "images/RevanthKumar-og.jpg";
+  const file = await readFile(join(process.cwd(), "public", relativePath));
   return `data:image/jpeg;base64,${file.toString("base64")}`;
 }
 

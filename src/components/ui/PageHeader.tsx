@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { PortraitLightbox } from "@/components/ui/PortraitLightbox";
 import { Eyebrow, TwoToneTitle } from "@/components/ui/SectionHeading";
 import type { ImageAsset } from "@/types/portfolio";
 
@@ -30,7 +30,7 @@ export function PageHeader({
               <div className="enter">
                 <Eyebrow>{eyebrow}</Eyebrow>
               </div>
-              <div className="mt-2.5 grid grid-cols-[minmax(0,1fr)_7rem] items-start gap-3.5 sm:grid-cols-[minmax(0,1fr)_8rem] sm:gap-4">
+              <div className="mt-2.5 grid grid-cols-[minmax(0,1fr)_8rem] items-start gap-3.5 sm:grid-cols-[minmax(0,1fr)_9rem] sm:gap-4">
                 <div className="min-w-0">
                   <h1 className="rise text-balance text-[clamp(1.7rem,1.45rem+1.2vw,2.1rem)] font-semibold leading-[1.08] tracking-[-0.035em]">
                     <TwoToneTitle title={title} accent={accent} />
@@ -46,16 +46,14 @@ export function PageHeader({
                   className="enter relative w-full rounded-[14px] border border-border bg-surface p-1 shadow-[var(--shadow-card)]"
                   style={{ "--enter-delay": "100ms" } as React.CSSProperties}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[10px] bg-surface-subtle">
-                    <Image
-                      src={portrait.src}
-                      alt={portrait.alt}
-                      fill
-                      priority
-                      sizes="(min-width: 640px) 128px, 112px"
-                      className="object-cover object-[50%_16%]"
-                    />
-                  </div>
+                  <PortraitLightbox
+                    image={portrait}
+                    priority
+                    sizes="(min-width: 640px) 144px, 128px"
+                    className="w-full rounded-[10px]"
+                    frameClassName="aspect-[4/5] rounded-[10px] bg-surface-subtle"
+                    imageClassName="object-cover object-[50%_16%]"
+                  />
                 </figure>
               </div>
               {children ? (
@@ -90,16 +88,14 @@ export function PageHeader({
                 className="enter relative mx-auto w-full rounded-[20px] border border-border bg-surface p-1.5 shadow-[var(--shadow-raised)]"
                 style={{ "--enter-delay": "100ms" } as React.CSSProperties}
               >
-                <div className="group/portrait relative aspect-[4/5] overflow-hidden rounded-[15px] bg-surface-subtle">
-                  <Image
-                    src={portrait.src}
-                    alt={portrait.alt}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 260px, 24vw"
-                    className="object-cover object-[50%_30%] transition-transform duration-500 ease-out group-hover/portrait:scale-[1.015]"
-                  />
-                </div>
+                <PortraitLightbox
+                  image={portrait}
+                  priority
+                  sizes="(min-width: 1024px) 260px, 24vw"
+                  className="w-full rounded-[15px]"
+                  frameClassName="group/portrait aspect-[4/5] rounded-[15px] bg-surface-subtle"
+                  imageClassName="object-cover object-[50%_30%] transition-transform duration-500 ease-out group-hover/portrait:scale-[1.015]"
+                />
               </figure>
             </div>
           </>
@@ -113,9 +109,16 @@ export function PageHeader({
                 <TwoToneTitle title={title} accent={accent} />
               </h1>
               {avatar ? (
-                <span className="enter relative inline-flex size-16 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
-                  <Image src={avatar.src} alt={avatar.alt} fill sizes="64px" className="object-cover" />
-                </span>
+                <figure className="enter relative size-16 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle shadow-[var(--shadow-card)] md:hidden">
+                  <PortraitLightbox
+                    image={avatar}
+                    priority
+                    sizes="64px"
+                    className="size-full rounded-full"
+                    frameClassName="size-full rounded-full"
+                    imageClassName="object-cover"
+                  />
+                </figure>
               ) : null}
             </div>
             <p

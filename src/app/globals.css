@@ -358,6 +358,59 @@ body {
   scroll-snap-align: start;
 }
 
+/* Portrait / photo preview */
+
+.image-preview-dialog {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    opacity 200ms var(--ease-out-soft),
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+.image-preview-dialog[open] {
+  display: block;
+  opacity: 1;
+}
+
+@starting-style {
+  .image-preview-dialog[open] {
+    opacity: 0;
+  }
+}
+
+.image-preview-dialog::backdrop {
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  transition:
+    background-color 200ms ease-out,
+    backdrop-filter 200ms ease-out,
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+.image-preview-dialog[open]::backdrop {
+  background-color: color-mix(in srgb, #0a0a0a 72%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+@starting-style {
+  .image-preview-dialog[open]::backdrop {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}
+
 /* Project dialog */
 
 .project-dialog {
